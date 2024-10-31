@@ -1,17 +1,16 @@
-// backend.js
-import express from "express";
+import express from 'express';
+import connectDB from './db.js';
+import reportRoutes from './routes/reportRoutes.js';
 
 const app = express();
 const port = 8000;
 
 app.use(express.json());
+app.use('/reports', reportRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
-app.listen(port, () => {
-  console.log(
-    `Example app listening at http://localhost:${port}`
-  );
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+  });
 });
