@@ -1,0 +1,154 @@
+.container {
+    width: 1460px;
+    height: 1044px;
+    flex-shrink: 0;
+
+    /* Set the border and background */
+    border: 1px solid #000; /* Adjust --sds-size-stroke-border if it's a custom value */
+    background-color: #D2D5EE;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for style */
+}
+
+.btn {
+    background-color: #7BB4D4; /* Default light blue */
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-anon {
+    display: flex;
+    width: auto;/*476px;*/
+    height: auto;/*129px;*/
+    padding: 40px 120px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    background: #7BB4D4;
+    color: #000; /* Font color */
+    font-family: "Playfair Display", serif; /* Font family */
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+}
+
+/* .subtext-anon {
+color: #000;
+font-family: "Playpen Sans", sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+position: absolute;
+top: 50%;
+left: 102%; 
+transform: translateY(-50%);
+text-align: left;
+}
+.anon-container {
+position: relative;
+display: inline-flex;
+align-items: center;
+}
+*/
+
+.btn-admin {
+    display: flex;
+    width: auto;/*476px;*/
+    height: auto; /*129px;*/
+    padding: 40px 120px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    background: #7BB4D4; /* Light blue background */
+
+    color: #000; /* Font color */
+    font-family: "Playfair Display", serif; /* Font family */
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border: none;
+    cursor: pointer;
+
+    margin-top: 50px;           
+}
+
+.icon {
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+
+    display: block;
+    margin: 0 auto 20px; /* Centers the image and adds space below it */
+    margin-bottom: 50px; /* Optional: Adds space below the icon */
+}
+
+.buttons-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.paper-airplane {
+    position: absolute;
+    width: auto; /* Increase the size as needed */
+    height: 500px;
+    top: 10px; /* Adjust vertical positioning */
+    left: -50px; /* Adjust horizontal positioning */
+    z-index: 0; /* Ensures it stays behind the buttons */
+    opacity: 0.9; /* Optional: Slight transparency */
+}
+    
+
+.anon-container,
+.btn-admin {
+    position: relative;
+    z-index: 1; /* Ensures buttons are above the airplane image */
+    margin: 10px 0; /* Adds vertical space between buttons */
+}
+
+.btn-anon,
+.btn-admin {
+    background-color: #7BB4D4;
+    color: #000;
+    width: 476px;
+    height: 129px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.subtext-anon {
+    font-family: "Playpen Sans", sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    margin-top: 10px;
+}
