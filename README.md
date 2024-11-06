@@ -12,5 +12,5 @@ git pull to make sure you have the most recent updates, then in the backend bran
 
 mongodb+srv://<username>:<db_password>@sloutions.jsptt.mongodb.net/?retryWrites=true&w=majority&appName=SLOutions
 
-the only thing in the .env file should be your mongodb_uri = 'link' without the '' as shown above. replace the <username> and <db_password> with your username and your password without the <>. then navigate to the node.js that i have already created and in line 15 there are instructions on how to add your credentials. once you add your credentials to your .env and have done the node.js, in terminal cd to backend (folder) then run node node.js and it should say "Connected to mongoDB Atlas Pinged your deployment. You successfully connected to MongoDB!"
+the only thing in the .env file should be your mongodb_uri = 'link' without the '' as shown above. replace the <username> and <db_password> with your username and your password without the <>. then navigate to the node.js that i have already created and in line 15 there are instructions on how to add your credentials. once you add your credentials to your .env and have done the node.js, in terminal cd to backend (folder) then run "node node.js" and it should say "Connected to mongoDB Atlas Pinged your deployment. You successfully connected to MongoDB!"
 
