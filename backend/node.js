@@ -1,7 +1,8 @@
-//node.js
+// Import required packages
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+// Use mongoose to connect using the URI from the .env file
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB Atlas");
@@ -10,13 +11,9 @@ mongoose.connect(process.env.MONGODB_URI)
     console.error("Error connecting to MongoDB Atlas:", error);
   });
 
+// Optional MongoClient setup
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://thzhu:idkwhatimdoinghere@sloutions.jsptt.mongodb.net/?retryWrites=true&w=majority&appName=SLOutions";
-// add yours here, copy my format but with your credentials
-
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
+const client = new MongoClient(process.env.MONGODB_URI, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -26,7 +23,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
+    // Connect the client to the server
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
@@ -36,4 +33,5 @@ async function run() {
     await client.close();
   }
 }
+
 run().catch(console.dir);
