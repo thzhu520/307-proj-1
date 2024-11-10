@@ -13,6 +13,11 @@ const reportSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  time: {
+    type: Date,
+    default: Date.now,
+  },
+
 });
 
 const Report = mongoose.model('Report', reportSchema);

@@ -1,4 +1,5 @@
 import Report from '../models/Report.js';
+import { filterByDateRange, filterByLocation } from '../filters/reportFilters.js';
 
 // Create a new report
 export const createReport = async (req, res) => {
