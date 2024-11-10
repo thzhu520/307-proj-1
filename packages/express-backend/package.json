@@ -10,5 +10,8 @@
   "description": "",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "mongoose": "^8.8.0"
   }
 }
