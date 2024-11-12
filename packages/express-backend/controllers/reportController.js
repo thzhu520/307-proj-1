@@ -1,16 +1,15 @@
-import moment from 'moment';
 import Report from '../models/Report.js';
 
 // Create a new report
 export const createReport = async (req, res) => {
   try {
-    // Format the current time before saving
-    const formattedTime = moment().format("dddd, MMMM Do YYYY [at] h:mm:ss A");
+    // Store the time in ISO 8601 format (using JavaScript Date object)
+    const formattedTime = new Date(); // This will store the current time in ISO format
 
     // Create a new report with the formatted time
     const newReport = new Report({
       ...req.body,
-      time: formattedTime, // Add the formatted time here
+      time: formattedTime, // Store the ISO 8601 date here
     });
 
     await newReport.save();
@@ -48,10 +47,25 @@ export const getReports = async (req, res) => {
     const reports = await Report.find(filter);
 
     // Format the time of each report before sending it back
-    const formattedReports = reports.map(report => ({
-      ...report.toObject(),
-      time: moment(report.time).format("dddd, MMMM Do YYYY [at] h:mm:ss A"), // Format the time field
-    }));
+    const formattedReports = reports.map(report => {
+      // Format the time field without using Moment.js
+      const date = new Date(report.time);
+      const formattedTime = date.toLocaleString('en-US', {
+        weekday: 'long', // Monday
+        year: 'numeric', // 2024
+        month: 'long', // November
+        day: 'numeric', // 11
+        hour: 'numeric', // 3 PM
+        minute: 'numeric', // 45
+        second: 'numeric', // 43
+        hour12: true, // AM/PM
+      });
+
+      return {
+        ...report.toObject(),
+        time: formattedTime, // Send the formatted date string
+      };
+    });
 
     res.status(200).json(formattedReports); // Send the formatted reports
   } catch (error) {

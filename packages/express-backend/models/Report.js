@@ -14,7 +14,7 @@ const reportSchema = new mongoose.Schema({
     required: true,
   },
   time: {
-    type: Date,
+    type: String,
     default: Date.now,
   },
 });
