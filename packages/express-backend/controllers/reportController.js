@@ -1,26 +1,43 @@
 import Report from '../models/Report.js';
-import { filterByDateRange, filterByLocation } from '../filters/reportFilters.js';
 
 // Create a new report
 export const createReport = async (req, res) => {
   try {
-    console.log("Request Body:", req.body); // debug
-    const report = new Report(req.body);
-    await report.save();
-    res.status(201).send(report);
+    const newReport = new Report(req.body);
+    await newReport.save();
+    res.status(201).json(newReport);
   } catch (error) {
-    console.error("Error:", error); // debug
-    res.status(400).send(error);
+    res.status(500).json({ error: "Failed to create report." });
   }
 };
 
-// Get all reports
+// Get all reports (with optional filters)
 export const getReports = async (req, res) => {
+  const { title, location, startTime, endTime } = req.query;
+  const filter = {};
+
+  if (title) {
+    const titleRegex = new RegExp(title, 'i'); // Case-insensitive match
+    filter.title = titleRegex;
+  }
+
+  if (location) {
+    filter.location = location;
+  }
+
+  if (startTime || endTime) {
+    const timeFilter = {};
+    if (startTime) timeFilter.$gte = new Date(startTime);
+    if (endTime) timeFilter.$lte = new Date(endTime);
+    filter.time = timeFilter;
+  }
+
   try {
-    const reports = await Report.find();
-    res.status(200).send(reports);
+    const reports = await Report.find(filter);
+    res.status(200).json(reports);
   } catch (error) {
-    console.error("Error:", error);
-    res.status(500).send(error);
+    res.status(500).json({ error: "Failed to retrieve reports." });
   }
 };
+
+

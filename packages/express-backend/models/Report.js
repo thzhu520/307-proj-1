@@ -17,7 +17,6 @@ const reportSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-
 });
 
 const Report = mongoose.model('Report', reportSchema);
