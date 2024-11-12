@@ -6,6 +6,9 @@
 	    "dev": "nodemon db.js",
 	    "start": "node db.js"
     },
+    "workspaces": [
+        "packages/express-backend"
+    ],
     "devDependencies": {
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
