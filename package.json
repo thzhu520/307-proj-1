@@ -16,6 +16,5 @@
     },
     "dependencies": {
         "mongodb": "^6.10.0"
-    },
-    "test": "echo \"Error: no test specified\""
+    }
 }
