@@ -1,27 +1,36 @@
 .container {
-    width: 1460px;
-    height: 1044px;
+    width: 90%; /* Makes it responsive */
+    max-width: 1460px;
+    height: auto; /* Adapts to content height */
     flex-shrink: 0;
-
-    /* Set the border and background */
-    border: 1px solid #000; /* Adjust --sds-size-stroke-border if it's a custom value */
+    border: 1px solid #000;
     background-color: #D2D5EE;
-
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto; /* Centering */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for style */
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
-
 .btn {
-    background-color: #7BB4D4; /* Default light blue */
+    background-color: #7BB4D4;
     border: none;
-    color: #fff;
-    font-size: 20px;
+    color: #000;
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 700;
+    border-radius: 20px;
     cursor: pointer;
+    width: 80%; /* Set relative width for responsiveness */
+    max-width: 476px; /* Maintain max size */
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .btn-anon {
@@ -45,27 +54,6 @@
     border: none;
     cursor: pointer;
 }
-
-/* .subtext-anon {
-color: #000;
-font-family: "Playpen Sans", sans-serif;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-
-position: absolute;
-top: 50%;
-left: 102%; 
-transform: translateY(-50%);
-text-align: left;
-}
-.anon-container {
-position: relative;
-display: inline-flex;
-align-items: center;
-}
-*/
 
 .btn-admin {
     display: flex;
@@ -94,13 +82,9 @@ align-items: center;
 }
 
 .icon {
-    width: auto;
+    width: 100px; /* Define a specific size for consistency */
     height: auto;
-    flex-shrink: 0;
-
-    display: block;
-    margin: 0 auto 20px; /* Centers the image and adds space below it */
-    margin-bottom: 50px; /* Optional: Adds space below the icon */
+    margin: 0 auto 20px;
 }
 
 .buttons-wrapper {
@@ -110,17 +94,15 @@ align-items: center;
     align-items: center;
 }
 
-
 .paper-airplane {
     position: absolute;
-    width: auto; /* Increase the size as needed */
-    height: 500px;
-    top: 10px; /* Adjust vertical positioning */
-    left: -50px; /* Adjust horizontal positioning */
-    z-index: 0; /* Ensures it stays behind the buttons */
-    opacity: 0.9; /* Optional: Slight transparency */
+    width: 20vw; /* Responsive width */
+    height: auto;
+    top: 10px;
+    left: -5%;
+    z-index: 0;
+    opacity: 0.9;
 }
-    
 
 .anon-container,
 .btn-admin {
