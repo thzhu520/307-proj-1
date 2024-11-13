@@ -3,8 +3,8 @@
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
         "lint": "npx eslint . && npx prettier --check .",
         "test": "npx jest",
-	    "dev": "nodemon db.js",
-	    "start": "node db.js"
+        "dev": "nodemon db.js",
+        "start": "node db.js"
     },
     "workspaces": [
         "packages/express-backend"
@@ -12,6 +12,7 @@
     "devDependencies": {
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
+        "nodemon": "^3.1.7",
         "prettier": "^3.3.3"
     },
     "dependencies": {
