@@ -1,15 +1,14 @@
-// db.js
 import mongoose from 'mongoose';
+import 'dotenv/config'; // Ensure environment variables are loaded
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/your_db_name'); // Removed deprecated options
+    await mongoose.connect(process.env.MONGODB_URI); // Make sure MONGODB_URI is defined in .env
     console.log('MongoDB connected successfully');
   } catch (error) {
-    console.error('MongoDB connection failed:', error);
-    process.exit(1); // Exit if connection fails
+    console.error('MongoDB connection failed:', error.message);
+    process.exit(1); // Exit process with failure
   }
 };
 
 export default connectDB;
-

@@ -1,23 +1,23 @@
 import express from 'express';
-import cors from 'cors'; // Make sure cors is imported after express
-import connectDB from './db.js'; // Your DB connection
-import reportRoutes from './routes/reportroutes.js'; // Import report routes
+import cors from 'cors';
+import connectDB from './db.js'; // Database connection file
+import reportRoutes from './routes/reportroutes.js'; // Report routes
 
-// Initialize the Express app after importing the necessary packages
+// Initialize the Express app
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 // Middleware
-app.use(cors()); // Use CORS middleware before routes
-app.use(express.json()); // to parse JSON request bodies
+app.use(cors());
+app.use(express.json());
+
+// Connect to MongoDB
+connectDB();
 
 // Use the report routes
 app.use('/reports', reportRoutes); 
 
-// Connect to the database
-connectDB();
-
 // Start the server
-app.listen(process.env.PORT || port, () => {
-  console.log("REST API is listening.");
+app.listen(PORT, () => {
+  console.log(`REST API is listening on port ${PORT}`);
 });
