@@ -3,7 +3,12 @@ import Report from '../models/Report.js';
 // Function to create a new report
 export const createReport = async (req, res) => {
   try {
-    const newReport = new Report(req.body);
+    // Add the current date and time to the report
+    const newReport = new Report({
+      ...req.body,
+      createdDate: new Date()  // Set to the current date and time
+    });
+
     await newReport.save();
     res.status(201).json(newReport);
   } catch (error) {
@@ -16,6 +21,8 @@ export const createReport = async (req, res) => {
 export const getReports = async (req, res) => {
   try {
     const reports = await Report.find();
+
+    // Format dates to a more readable format
     const formattedReports = reports.map(report => {
       const date = new Date(report.createdDate);
       const formattedDate = date.toLocaleDateString('en-US', {
@@ -28,6 +35,7 @@ export const getReports = async (req, res) => {
         hour: 'numeric',
         minute: 'numeric',
         second: 'numeric',
+        hour12: true
       });
 
       return {
@@ -38,7 +46,6 @@ export const getReports = async (req, res) => {
 
     res.json(formattedReports);
   } catch (error) {
-    console.error("Error retrieving reports:", error);
     res.status(500).json({ message: "Error retrieving reports" });
   }
 };
