@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "backend.js",
   "scripts": {
-    "start": "node backend.js"
+    "start": "node backend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
   },
   "dependencies": {
     "moment": "^2.30.1",
-    "mongoose": "^8.8.0"
+    "mongoose": "^8.8.0",
+    "punycode": "^2.3.1"
   }
 }
