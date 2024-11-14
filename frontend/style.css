@@ -1,4 +1,5 @@
-.container {
+body {
+    margin: 0;
     width: 100vw;
     height: 100vh;
     max-width: 100%; /* Avoids any overflow */
@@ -11,9 +12,13 @@
     justify-content: center;
     align-items: center;
     margin: 0; /* Removes any default margin */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url(paper_airplane.png);
+    background-repeat: no-repeat;
+    background-position: center 35%; /* This shifts the background image up slightly */
+    background-size: 700px;
 }
+
+
 .btn {
     background-color: #7BB4D4;
     color: #000;
@@ -31,7 +36,7 @@
     align-items: center;
     text-align: center;
     border: none;
-    margin-top: 10px; /* Space between buttons */
+    margin-top: 5px; /* Space between buttons */
 }
 
 .btn-anon {
@@ -79,37 +84,43 @@
     border: none;
     cursor: pointer;
 
-    margin-top: 50px;           
+    margin-top: 1000px;           
 }
 
 .icon {
     width: auto; /* Define a specific size for consistency */
     height: auto;
     margin: 0 auto 20px;
+    position: absolute;
+    top: 0;
 }
+
+.threedots {
+    position: absolute;
+    top: 20px; /* Adjust based on desired spacing from top */
+    right: 20px; /* Adjust based on desired spacing from right */
+    width: 50px; /* Adjust size if necessary */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
 
 .buttons-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* padding-top: 100px; */
+    transform: translateY(50px);
 }
 
-.paper-airplane {
-    position: absolute;
-    width: 40vw; /* Adjust width to ensure it covers the desired area */
-    height: auto;
-    top: -40px; /* Move it upward */
-    z-index: 0; /* Keeps it behind the buttons */
-    opacity: 0.9; /* Optional: Slight transparency */
-}
 
 
 .anon-container,
 .btn-admin {
     position: relative;
     z-index: 1; /* Ensures buttons are above the airplane image */
-    margin: 10px 0; /* Adds vertical space between buttons */
+    margin: 3px 0; /* Adds vertical space between buttons */
 }
 
 .btn-anon,
@@ -131,7 +142,9 @@
 
 .subtext-anon {
     font-family: "Playpen Sans", sans-serif;
+    font-weight: bold;
     font-size: 20px;
     color: #FFF;
-    margin-top: 10px;
+    margin-top: 2px;
+    text-align: right; /* Ensures the text aligns within the element */
 }
