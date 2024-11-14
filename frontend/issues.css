@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; /* Avoids any overflow */
+    max-height: 100%;
+    flex-shrink: 0;
+    background-color: #D9C0B2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Removes any default margin */
+    
+}
+
+.btn {
+    background-color: #B2CBD9;
+    color: #FFF;
+    font-family: "Playpen Sans", sans-serif;
+    font-weight: bold;
+    font-size: calc(2vw + 10px); /* Responsive font size */
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%; /* Fills most of the screen width */
+    max-width: 476px; /* Maximum width for larger screens */
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    margin-top: 5px; /* Space between buttons */
+}
+
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2CBD9; /* Adjust the color as needed */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logo in the navbar */
+.navbar-logo img {
+    height: 70px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 100px; /* Spacing between links */
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 30px; /* Adjust font size as needed */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+

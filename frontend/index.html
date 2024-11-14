@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLOutions</title>
+    <!-- Link to Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- Link to the CSS file in the root directory -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
         <!-- Updated paths for images in the root directory -->
         <img src="icon.png" alt="SLOutions Icon" class="icon">
+        <img src="threedots.png" alt="threedots Icon" class="threedots">
         <div class="buttons-wrapper">
-            <img src="paper_airplane.png" alt="Paper Airplane" class="paper-airplane">
+            <!-- <img src="paper_airplane.png" alt="Paper Airplane" class="paper-airplane"> -->
             <div class="anon-container">
-                <button class="btn btn-anon" id="anonBtn">Anonymous</button>
+                <button class="btn btn-anon" id="anonBtn">anonymous</button>
+                <p class="subtext subtext-anon">Drop an anon msg!</p>
             </div>
-            <button class="btn btn-admin" id="adminBtn">Admin</button>
+            <button class="btn btn-admin" id="adminBtn">admin</button>
         </div>
-    </div>    
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -26,21 +28,9 @@
 
             // Event listener for the "Anonymous" button
             document.getElementById('anonBtn').addEventListener('click', () => {
-                fetch(`${apiUrl}/api/messages`, { 
-                    method: 'POST', 
-                    headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ message: "Anonymous message!" }) 
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Anonymous message sent:', data);
-                    alert("Anonymous message sent!");
-                })
-                .catch(error => {
-                    console.error('Error sending anonymous message:', error);
-                    alert("Failed to send anonymous message. Check console for errors.");
-                });
+                window.location.href = 'issue_main.html';
             });
+
 
             // Event listener for the "Admin" button
             document.getElementById('adminBtn').addEventListener('click', () => {
