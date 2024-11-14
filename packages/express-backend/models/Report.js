@@ -1,23 +1,11 @@
 import mongoose from 'mongoose';
 
 const reportSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  location: {
-    type: String,
-    required: true,
-  },
-  time: {
-    type: String,
-    default: Date.now,
-  },
+  title: String,
+  description: String,
+  location: String,
+  createdDate: { type: Date, default: Date.now },
+  status: String,
 });
+export default mongoose.model('Report', reportSchema);
 
-const Report = mongoose.model('Report', reportSchema);
-export default Report;

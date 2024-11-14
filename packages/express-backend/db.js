@@ -3,7 +3,7 @@ import 'dotenv/config'; // Ensure environment variables are loaded
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI); // Make sure MONGODB_URI is defined in .env
+    await mongoose.connect(process.env.MONGODB_URI); // No need for deprecated options
     console.log('MongoDB connected successfully');
   } catch (error) {
     console.error('MongoDB connection failed:', error.message);

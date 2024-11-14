@@ -1,74 +1,44 @@
 import Report from '../models/Report.js';
 
-// Create a new report
+// Function to create a new report
 export const createReport = async (req, res) => {
   try {
-    // Store the time in ISO 8601 format (using JavaScript Date object)
-    const formattedTime = new Date(); // This will store the current time in ISO format
-
-    // Create a new report with the formatted time
-    const newReport = new Report({
-      ...req.body,
-      time: formattedTime, // Store the ISO 8601 date here
-    });
-
+    const newReport = new Report(req.body);
     await newReport.save();
     res.status(201).json(newReport);
   } catch (error) {
-    res.status(500).json({ error: "Failed to create report." });
+    console.error("Error creating report:", error);
+    res.status(500).json({ message: "Error creating report" });
   }
 };
 
-// Get all reports (with optional filters)
+// Function to get all reports with formatted dates
 export const getReports = async (req, res) => {
-  const { title, location, startTime, endTime } = req.query;
-  const filter = {};
-
-  // Filter by title
-  if (title) {
-    const titleRegex = new RegExp(title, 'i'); // Case-insensitive match
-    filter.title = titleRegex;
-  }
-
-  // Filter by location
-  if (location) {
-    filter.location = location;
-  }
-
-  // Filter by time range
-  if (startTime || endTime) {
-    const timeFilter = {};
-    if (startTime) timeFilter.$gte = new Date(startTime);
-    if (endTime) timeFilter.$lte = new Date(endTime);
-    filter.time = timeFilter;
-  }
-
   try {
-    const reports = await Report.find(filter);
-
-    // Format the time of each report before sending it back
+    const reports = await Report.find();
     const formattedReports = reports.map(report => {
-      // Format the time field without using Moment.js
-      const date = new Date(report.time);
-      const formattedTime = date.toLocaleString('en-US', {
-        weekday: 'long', // Monday
-        year: 'numeric', // 2024
-        month: 'long', // November
-        day: 'numeric', // 11
-        hour: 'numeric', // 3 PM
-        minute: 'numeric', // 45
-        second: 'numeric', // 43
-        hour12: true, // AM/PM
+      const date = new Date(report.createdDate);
+      const formattedDate = date.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+      const formattedTime = date.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
       });
 
       return {
         ...report.toObject(),
-        time: formattedTime, // Send the formatted date string
+        createdDate: `${formattedDate} at ${formattedTime}`
       };
     });
 
-    res.status(200).json(formattedReports); // Send the formatted reports
+    res.json(formattedReports);
   } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve reports." });
+    console.error("Error retrieving reports:", error);
+    res.status(500).json({ message: "Error retrieving reports" });
   }
 };
