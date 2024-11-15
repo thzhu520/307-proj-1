@@ -1,12 +1,14 @@
 /* Form container styling */
 .report-form-container {
     display: inline-block;         /* Allows the container to sit side by side with the map */
+    display: inline-block;         /* Allows the container to sit side by side with the map */
     background-color: #e0e7ff;
     padding: 40px;
     border-radius: 10px;
     width: 700px;
     margin: 20px;                 /* Removed `auto` to allow side-by-side alignment */
     text-align: center;
+    vertical-align: middle;       /* Vertically centers with the map */
     vertical-align: middle;       /* Vertically centers with the map */
 }
 
