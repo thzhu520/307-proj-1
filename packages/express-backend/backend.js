@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 8000;
 
 // Enable CORS for your frontend URL
 app.use(cors({
-    origin: 'https://proud-river-0020a851e.5.azurestaticapps.net' // Allow frontend URL
+    origin: 'https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net', // Frontend URL
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
 }));
 
 // Middleware for parsing JSON
