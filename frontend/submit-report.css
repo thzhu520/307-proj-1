@@ -1,11 +1,13 @@
 /* Form container styling */
 .report-form-container {
+    display: inline-block;         /* Allows the container to sit side by side with the map */
     background-color: #e0e7ff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
-    width: 50%;
-    margin: 20px auto;
+    width: 700px;
+    margin: 20px;                 /* Removed `auto` to allow side-by-side alignment */
     text-align: center;
+    vertical-align: middle;       /* Vertically centers with the map */
 }
 
 /* Form title styling */
@@ -68,4 +70,13 @@
 
 .submit-button:hover {
     background-color: #455a64;
+}
+
+.calpoly-map {
+    display: inline-block;         /* Allows the map to sit side by side with the form */
+    width: 500px;                  /* Custom width for the map */
+    height: 550px;                 /* Custom height for the map */
+    vertical-align: middle;        /* Vertically centers with the form */
+    border: 6px solid black;       /* Inline border styling moved to CSS */
+    margin: 20px;                  /* Add some spacing around the map */
 }
