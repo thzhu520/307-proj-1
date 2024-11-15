@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
 <body>
     <header class="navbar">
         <div class="navbar-logo">
-            <img src="icon.png" alt="SLOutions Logo">
+            <a href="issue_main.html">
+                <img src="icon.png" alt="SLOutions Logo">
+            </a>
         </div>
         <nav class="navbar-links">
             <a href="about.html">About Us</a>
@@ -20,36 +23,46 @@
         </nav>
     </header>
 
-    <div class="report-form-container">
-        <h1 class="form-title">Report An Issue</h1>
-        <div class="form-section">
-            <p class="section-header">Give Us More Details</p>
-            <form id="reportForm">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" placeholder="Issue Title" required>
-                </div>
+    <div class="content-container">
+        <div class="report-form-container">
+            <!-- The Report Form -->
+            <h1 class="form-title">Report An Issue</h1>
+            <div class="form-section">
+                <p class="section-header">Give Us More Details</p>
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" placeholder="Issue Title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Describe the issue" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location (Building, Room #)</label>
+                        <input type="text" id="location" name="location" placeholder="Location Description" required>
+                    </div>
                 
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" placeholder="Describe the issue" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="location">Location (Building, Room #)</label>
-                    <input type="text" id="location" name="location" placeholder="Location Description" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="createdDate">Date</label>
-                    <input type="date" id="createdDate" name="createdDate" required>
-                </div>
+                    <script src="submit-report.js"></script>
 
-                <button type="submit" class="submit-button">Submit Report</button>
-            </form>
+                    <button type="submit" class="submit-button">Submit Report</button>
+                </form>
+            </div>
         </div>
+
+        <iframe class="calpoly-map"
+                src="https://experience.arcgis.com/experience/5d3c7ce97866487eac63664dff9fb946/page/Main-Map-Page/"
+                width="400px"
+                height="600px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
-    <script src="submit-report.js"></script>
+    <div class="clearfix"></div>
+    
 </body>
 </html>
