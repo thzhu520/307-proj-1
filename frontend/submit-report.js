@@ -11,7 +11,7 @@ document.getElementById("reportForm").addEventListener("submit", async function(
     };
 
     try {
-        const response = await fetch("/api/reports", {
+        const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports", { // Azure backend URL
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
