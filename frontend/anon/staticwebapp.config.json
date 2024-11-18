@@ -1,13 +1,9 @@
 {
-  "routes": [
-    {
-      "route": "/issue_main.html",
-      "rewrite": "/anon/issue_main.html"
-    },
-    {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
-    }
-  ]
-}
+    "routes": [
+      {
+        "route": "/*",
+        "serve": "/index.html",
+        "statusCode": 200
+      }
+    ]
+  }
