@@ -19,10 +19,11 @@ if (!process.env.MONGODB_URI) {
     process.exit(1); // Exit the process if MONGODB_URI is not defined
 }
 
-// console.log("MONGODB_URI:", process.env.MONGODB_URI);
+// Debugging: Log the current MongoDB URI
+// console.log("Connecting to MongoDB URI:", process.env.MONGODB_URI);
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080; // Azure dynamically assigns the PORT
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
@@ -35,9 +36,14 @@ app.use(cors()); // Allow all origins (temporary solution)
 //   origin: "https://your-frontend-domain.com"
 // }));
 
+// Lightweight health check endpoint for Azure
+app.get('/health', (req, res) => {
+    res.status(200).send('Healthy');
+});
+
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI, { dbName: 'SLOutions' }) // Optional: explicitly specify dbName
   .then(() => {
     console.log("Connected to MongoDB Atlas");
   })
