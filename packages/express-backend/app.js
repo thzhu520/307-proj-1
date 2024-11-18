@@ -4,7 +4,10 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors'; // Import CORS
 
-dotenv.config({ path: './packages/express-backend/.env' });
+dotenv.config({ path: './.env' });
+// console.log("Loaded environment variables:", process.env);
+// console.log("MONGODB_URI:", process.env.MONGODB_URI);
+
 
 
 const app = express();
