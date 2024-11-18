@@ -6,19 +6,18 @@
  * @returns {Array} - Filtered array of reports.
  */
 export const filterByDateRange = (reports, startDate, endDate) => {
-    return reports.filter(report => {
-      const reportDate = new Date(report.time);
-      return reportDate >= startDate && reportDate <= endDate;
-    });
-  };
-  
-  /**
-   * Filters reports by location.
-   * @param {Array} reports - The array of report documents.
-   * @param {String} location - The location to filter by.
-   * @returns {Array} - Filtered array of reports.
-   */
-  export const filterByLocation = (reports, location) => {
-    return reports.filter(report => report.location === location);
-  };
-  
+  return reports.filter(report => {
+    const reportDate = new Date(report.time);
+    return reportDate >= startDate && reportDate <= endDate;
+  });
+};
+
+/**
+ * Filters reports by location.
+ * @param {Array} reports - The array of report documents.
+ * @param {String} location - The location to filter by.
+ * @returns {Array} - Filtered array of reports.
+ */
+export const filterByLocation = (reports, location) => {
+  return reports.filter(report => report.location === location);
+};

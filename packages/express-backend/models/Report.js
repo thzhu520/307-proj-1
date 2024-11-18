@@ -8,4 +8,3 @@ const reportSchema = new mongoose.Schema({
   status: String,
 });
 export default mongoose.model('Report', reportSchema);
-
