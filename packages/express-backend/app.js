@@ -5,6 +5,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors'; // Import CORS
 
 dotenv.config({ path: './packages/express-backend/.env' });
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 const app = express();
 const PORT = process.env.PORT || 8080;
