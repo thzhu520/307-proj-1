@@ -1,15 +1,11 @@
 {
-  "routes": [
-    {
-      "route": "/anon/about.html",
-      "serve": "/anon/about.html",
-      "statusCode": 200
-    },
-    {
-      "route": "/*",
-      "fallback": "/index.html",
-      "statusCode": 404
-    }
-  ]
-}
+    "routes": [
+      {
+        "route": "/*",
+        "serve": "/index.html",
+        "statusCode": 200
+      }
+    ]
+  }
+  
 
