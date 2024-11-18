@@ -1,0 +1,101 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Form title styling */
+.form-title {
+    font-size: 2.5em;
+    font-family: 'Playpen Sans', sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Content container to hold form and map side by side */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Form container styling */
+.report-form-container {
+    background-color: #e0e7ff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    margin-right: 20px;
+    text-align: left;
+}
+
+/* Section header styling */
+.section-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Each question container styling */
+.question-container {
+    background-color: #cbd5e1; /* Different color for each question section */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.question-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+.question-container input[type="text"],
+.question-container textarea,
+.question-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Textarea specific styling */
+.question-container textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Submit button styling */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #607d8b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #455a64;
+}
+
+/* Map Styling */
+.calpoly-map {
+    width: 500px;
+    height: 550px;
+    border: 6px solid black;
+    margin-left: 20px;
+}
