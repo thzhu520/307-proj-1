@@ -7,7 +7,7 @@ import cors from 'cors'; // Import CORS
 dotenv.config({ path: './packages/express-backend/.env' });
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
