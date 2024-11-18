@@ -1,15 +1,9 @@
-/* Form container styling */
-.report-form-container {
-    display: inline-block;         /* Allows the container to sit side by side with the map */
-    display: inline-block;         /* Allows the container to sit side by side with the map */
-    background-color: #e0e7ff;
-    padding: 40px;
-    border-radius: 10px;
-    width: 700px;
-    margin: 20px;                 /* Removed `auto` to allow side-by-side alignment */
-    text-align: center;
-    vertical-align: middle;       /* Vertically centers with the map */
-    vertical-align: middle;       /* Vertically centers with the map */
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
 /* Form title styling */
@@ -17,34 +11,56 @@
     font-size: 2.5em;
     font-family: 'Playpen Sans', sans-serif;
     color: #333;
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Content container to hold form and map side by side */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Form container styling */
+.report-form-container {
+    background-color: #e0e7ff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    margin-right: 20px;
+    text-align: left;
 }
 
 /* Section header styling */
 .section-header {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-/* Each form field group styling */
-.form-group {
+/* Each question container styling */
+.question-container {
+    background-color: #cbd5e1; /* Different color for each question section */
+    border-radius: 8px;
+    padding: 15px;
     margin-bottom: 15px;
-    text-align: left;
 }
 
 /* Label styling */
-.form-group label {
+.question-container label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 /* Input and textarea styling */
-.form-group input[type="text"],
-.form-group input[type="date"],
-.form-group textarea {
+.question-container input[type="text"],
+.question-container textarea,
+.question-container input[type="file"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -54,13 +70,15 @@
 }
 
 /* Textarea specific styling */
-.form-group textarea {
+.question-container textarea {
     resize: vertical;
     height: 100px;
 }
 
 /* Submit button styling */
 .submit-button {
+    display: block;
+    width: 100%;
     padding: 12px 20px;
     background-color: #607d8b;
     color: white;
@@ -74,11 +92,10 @@
     background-color: #455a64;
 }
 
+/* Map Styling */
 .calpoly-map {
-    display: inline-block;         /* Allows the map to sit side by side with the form */
-    width: 500px;                  /* Custom width for the map */
-    height: 550px;                 /* Custom height for the map */
-    vertical-align: middle;        /* Vertically centers with the form */
-    border: 6px solid black;       /* Inline border styling moved to CSS */
-    margin: 20px;                  /* Add some spacing around the map */
+    width: 500px;
+    height: 550px;
+    border: 6px solid black;
+    margin-left: 20px;
 }

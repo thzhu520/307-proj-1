@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="submit-report.css">
     <link rel="stylesheet" href="issues.css">
 </head>
+
 <body>
+    <!-- Temporary Navigation Bar -->
     <header class="navbar">
         <div class="navbar-logo">
             <a href="issue_main.html">
@@ -23,46 +25,55 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
+    <h1 class="form-title">Report An Issue</h1>
     <div class="content-container">
+        <!-- Form Section -->
         <div class="report-form-container">
-            <!-- The Report Form -->
-            <h1 class="form-title">Report An Issue</h1>
             <div class="form-section">
                 <p class="section-header">Give Us More Details</p>
                 <form id="reportForm">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" name="title" placeholder="Issue Title" required>
+                    <!-- Title Section -->
+                    <div class="question-container">
+                        <label for="title">Title of the Issue</label>
+                        <input type="text" id="title" name="title" placeholder="Enter a brief title for your issue" required>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" placeholder="Describe the issue" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
+
+                    <!-- Location Section -->
+                    <div class="question-container">
                         <label for="location">Location (Building, Room #)</label>
                         <input type="text" id="location" name="location" placeholder="Location Description" required>
                     </div>
-                
-                    <script src="submit-report.js"></script>
 
+                    <!-- Description Section -->
+                    <div class="question-container">
+                        <label for="description">Issue Description</label>
+                        <textarea id="description" name="description" placeholder="Describe the issue" required></textarea>
+                    </div>
+
+                    <!-- Image Upload Section -->
+                    <div class="question-container">
+                        <label for="imageUpload">Image Upload (optional)</label>
+                        <input type="file" id="imageUpload" name="imageUpload">
+                    </div>
+
+                    <!-- Submit Button -->
                     <button type="submit" class="submit-button">Submit Report</button>
                 </form>
             </div>
         </div>
 
+        <!-- Map Section -->
         <iframe class="calpoly-map"
-                src="https://experience.arcgis.com/experience/5d3c7ce97866487eac63664dff9fb946/page/Main-Map-Page/"
-                width="500px"
-                height="550px"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
+            src="https://experience.arcgis.com/experience/5d3c7ce97866487eac63664dff9fb946/page/Main-Map-Page/"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </div>
 
     <div class="clearfix"></div>
-    
+    <script src="submit-report.js"></script>
 </body>
+
 </html>

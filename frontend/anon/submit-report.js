@@ -2,11 +2,10 @@ document.getElementById("reportForm").addEventListener("submit", async function(
     event.preventDefault();
 
     const report = {
-        id: generateUniqueId(),
         title: document.getElementById("title").value,
         description: document.getElementById("description").value,
         location: document.getElementById("location").value,
-        createdDate: document.getElementById("createdDate").value,
+        createdDate: new Date().toISOString(), // Automatically set the current date and time
         status: "unresolved"
     };
 
@@ -32,8 +31,3 @@ document.getElementById("reportForm").addEventListener("submit", async function(
         alert("An error occurred while submitting the report.");
     }
 });
-
-// Function to generate a unique ID (simple example)
-function generateUniqueId() {
-    return 'id-' + Math.random().toString(36).substr(2, 9);
-}
