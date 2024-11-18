@@ -2,23 +2,24 @@ document.getElementById("reportForm").addEventListener("submit", async function(
     event.preventDefault();
 
     const report = {
-        id: generateUniqueId(),
         title: document.getElementById("title").value,
         description: document.getElementById("description").value,
         location: document.getElementById("location").value,
-        createdDate: document.getElementById("createdDate").value,
+        createdDate: new Date().toISOString(), // Automatically set the current date and time
         status: "unresolved"
     };
 
     try {
         // Send the report data to the backend (Azure)
-        const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/reports", {
+        const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(report)
+            body: JSON.stringify(report),
         });
+        
+        
 
         if (response.ok) {
             alert("Report submitted successfully!");
@@ -32,8 +33,3 @@ document.getElementById("reportForm").addEventListener("submit", async function(
         alert("An error occurred while submitting the report.");
     }
 });
-
-// Function to generate a unique ID (simple example)
-function generateUniqueId() {
-    return 'id-' + Math.random().toString(36).substr(2, 9);
-}
