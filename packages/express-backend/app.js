@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors'; // Import CORS
 
-dotenv.config();
+dotenv.config({ path: './packages/express-backend/.env' });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,13 +21,15 @@ app.use(cors()); // Allow all origins (temporary solution)
 // }));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB Atlas");
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB Atlas:", error);
   });
+
 
 // Define the report schema and model
 const reportSchema = new mongoose.Schema({
