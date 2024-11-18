@@ -28,24 +28,15 @@
 
             // Event listener for the "Anonymous" button
             document.getElementById('anonBtn').addEventListener('click', () => {
-               window.location.href = '/anon/issue_main.html'; 
+                window.location.href = 'anon/issue_main.html';
             });
 
 
             // Event listener for the "Admin" button
             document.getElementById('adminBtn').addEventListener('click', () => {
-                fetch(`${apiUrl}/api/admin`, { method: 'GET' })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Admin data received:', data);
-                    alert("Admin data received!");
-                })
-                .catch(error => {
-                    console.error('Error fetching admin data:', error);
-                    alert("Failed to fetch admin data. Check console for errors.");
+                window.location.href = 'issue_admin.html';
                 });
-            });
         });
     </script>
 </body>
-</html> 
+</html>
