@@ -4,38 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLOutions</title>
-    <!-- Link to Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link to the CSS file in the root directory -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- Updated paths for images in the root directory -->
+    <header>
         <img src="icon.png" alt="SLOutions Icon" class="icon">
-        <img src="threedots.png" alt="threedots Icon" class="threedots">
-        <div class="buttons-wrapper">
-            <!-- <img src="paper_airplane.png" alt="Paper Airplane" class="paper-airplane"> -->
-            <div class="anon-container">
-                <button class="btn btn-anon" id="anonBtn">anonymous</button>
-                <p class="subtext subtext-anon">Drop an anon msg!</p>
-            </div>
-            <button class="btn btn-admin" id="adminBtn">admin</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="anon/about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="buttons-wrapper">
+        <div class="anon-container">
+            <button class="btn btn-anon" id="anonBtn">anonymous</button>
+            <p class="subtext subtext-anon">Drop an anon msg!</p>
         </div>
+        <button class="btn btn-admin" id="adminBtn">admin</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const apiUrl = 'https://proud-river-0020a851e.5.azurestaticapps.net/';
 
-            // Event listener for the "Anonymous" button
             document.getElementById('anonBtn').addEventListener('click', () => {
                 window.location.href = 'anon/issue_main.html';
             });
 
-
-            // Event listener for the "Admin" button
             document.getElementById('adminBtn').addEventListener('click', () => {
-                window.location.href = 'issue_admin.html';
+                fetch(`${apiUrl}/api/admin`, { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Admin data received:', data);
+                    alert("Admin data received!");
+                })
+                .catch(error => {
+                    console.error('Error fetching admin data:', error);
+                    alert("Failed to fetch admin data. Check console for errors.");
                 });
+            });
         });
     </script>
 </body>
