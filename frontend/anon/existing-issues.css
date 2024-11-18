@@ -1,0 +1,15 @@
+.report-search {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .report-search {
+    overflow: hidden;
+    background-color: #e9e9e9;
+  }
