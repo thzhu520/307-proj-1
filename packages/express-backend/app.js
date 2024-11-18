@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors'; // Import CORS
 
 dotenv.config();
 
@@ -10,6 +11,14 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
+
+// Add CORS middleware
+app.use(cors()); // Allow all origins (temporary solution)
+
+// Optionally, you can restrict it to a specific origin:
+// app.use(cors({
+//   origin: "https://your-frontend-domain.com"
+// }));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })

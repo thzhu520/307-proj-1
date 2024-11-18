@@ -11,13 +11,15 @@ document.getElementById("reportForm").addEventListener("submit", async function(
 
     try {
         // Send the report data to the backend (Azure)
-        const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/reports", {
+        const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(report)
+            body: JSON.stringify(report),
         });
+        
+        
 
         if (response.ok) {
             alert("Report submitted successfully!");
