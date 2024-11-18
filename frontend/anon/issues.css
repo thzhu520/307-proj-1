@@ -39,6 +39,30 @@ body {
     margin-top: -80px;
 }
 
+.btn2 {
+    background-color: #B2CBD9;
+    color: #FFF;
+    font-family: "Playpen Sans";
+    font-weight: bold;
+    font-size: 30px;
+    /* font-size: calc(2vw + 10px);  */
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%; /* Fills most of the screen width */
+    max-width: 476px; /* Maximum width for larger screens */
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    margin-left: 110px;
+    margin-bottom: 100px;
+    margin-top: -80px;
+}
+
 .button-container {
     display: flex;
     justify-content: left;
