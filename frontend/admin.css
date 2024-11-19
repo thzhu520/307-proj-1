@@ -63,15 +63,80 @@ body {
     display: flex;
 }
 
-.admin-login{
+.admin-login {
     color: #000;
     text-align: center;
     font-family: "Playfair Display";
     font-size: 60px;
-    font-style: bold;
     font-weight: 700;
     line-height: normal; 
-    margin: 0 auto; /* Centers the element itself in its container */
-    transform: l;;;
+    margin: 0 auto; /* Centers it horizontally */
+    position: absolute; /* Allow precise positioning */
+    top: 50%; /* Vertically centers it */
+    left: 50%; /* Horizontally centers it */
+    transform: translate(-50%, -50%); /* Adjusts for the element's own dimensions */
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Login Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+    width: 400px; /* Adjust width as needed */
+}
+
+/* Labels for Username and Password */
+.login-label {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Input Fields */
+.login-input {
+    width: 100%; /* Full width within the form */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #B2CBD9; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    font-family: "Playfair Display", serif;
+}
+
+/* Input Focus Effect */
+.login-input:focus {
+    outline: none; /* Removes default outline */
+    border-color: #708DAD; /* Highlight color */
+    box-shadow: 0 0 5px #708DAD; /* Optional shadow effect */
+}
+
+/* Login Button */
+.btn {
+    background-color: #B2CBD9;
+    color: #000;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #708DAD;
+    color: #FFF;
 }
 

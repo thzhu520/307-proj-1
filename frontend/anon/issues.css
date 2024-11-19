@@ -61,6 +61,13 @@ body {
     margin-left: 110px;
     margin-bottom: 100px;
     margin-top: -80px;
+    text-decoration: none; /* Removes underline */
+    transition: text-decoration 0.3s ease; /* Smooth transition effect */
+}
+
+/* Add underline on hover */
+.btn2:hover {
+    text-decoration: underline; /* Adds underline on hover */
 }
 
 .button-container {
@@ -114,6 +121,7 @@ body {
 .navbar-links a:hover {
     text-decoration: underline;
 }
+
 
 /* Main content styling (to account for navbar height) */
 .content {

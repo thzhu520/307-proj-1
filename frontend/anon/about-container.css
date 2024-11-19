@@ -26,6 +26,19 @@
     margin-left: -30px;
 }
 
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+
 /* Individual navigation links */
 .navbar-links a {
     color: #000; /* Text color */

@@ -11,10 +11,11 @@
     z-index: 1000;
 }
 
+
 /* Logo in the navbar */
-.navbar-logo {
-    margin-right: auto; /* Push the logo to the far left */
-    padding-left: 20px; /* Add some padding to align the logo */
+.navbar-logo img {
+    height: 70px; /* Adjust as needed */
+    width: auto;
 }
 
 .navbar-logo img {
