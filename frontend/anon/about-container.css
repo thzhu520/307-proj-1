@@ -1,1 +1,212 @@
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2CBD9; /* Adjust the color as needed */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
+/* Logo in the navbar */
+.navbar-logo img {
+    height: 70px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex-grow: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 100px; /* Spacing between links */
+    margin-left: -30px;
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 30px; /* Adjust font size as needed */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    font-weight: bold;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+    background-color: #D9C0B2;
+    position: relative;
+    overflow: hidden; /* Prevent extra elements from scrolling */
+}
+
+
+/* Title with Static Clouds */
+.team-title {
+    font-weight: bolder;
+    font-size: 5rem;
+    margin-top: 100px; /* Increase this to move it further down */
+    margin-bottom: 30px; /* Add more space below */
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+}
+
+/* Original Static Larger Stars */
+.team-title::before {
+    content: '˚₊‧꒰ა '; /* Left large star */
+    position: static;
+    font-size: 5rem; /* Larger star size */
+    color: #D9E4EC; 
+    left: px; /* Position relative to title */
+    top: 2.5%;
+    transform: translateY(-50%);
+}
+
+.team-title::after {
+    content: ' ໒꒱ ‧₊˚'; /* Right large star */
+    position: static;
+    font-size: 5rem; /* Larger star size */
+    color: #D9E4EC; 
+    right: px; /* Position relative to title */
+    top: 2.5%;
+    transform: translateY(-50%);
+}
+
+/* Moving Clouds */
+.cloud {
+    position: absolute;
+    font-size: 5rem;
+    color: #D9E4EC;
+    opacity: 0.7;
+    animation: move-diagonal 9s linear infinite; /* Diagonal animation */
+}
+
+/* Moving Stars */
+.star {
+    position: absolute;
+    font-size: 2rem;
+    color: #D9E4EC;
+    opacity: 0;
+    animation: move-diagonal 10s linear infinite; /* Diagonal animation */
+}
+
+/* Randomize Initial Positions */
+.cloud:nth-child(1), .star:nth-child(1) {
+    top: 10%;
+    left: -20%;
+    animation-delay: 0s;
+}
+.cloud:nth-child(2), .star:nth-child(2) {
+    top: 30%;
+    left: -30%;
+    animation-delay: 2s;
+}
+.cloud:nth-child(3), .star:nth-child(3) {
+    top: 50%;
+    left: -10%;
+    animation-delay: 4s;
+}
+.cloud:nth-child(4), .star:nth-child(4) {
+    top: 70%;
+    left: -25%;
+    animation-delay: 6s;
+}
+.cloud:nth-child(5), .star:nth-child(5) {
+    top: 90%;
+    left: -15%;
+    animation-delay: 8s;
+}
+
+/* Unified Diagonal Animation */
+@keyframes move-diagonal {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(1);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
+        opacity: 0;
+    }
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Team Member */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAF4EF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #B2CBD9;
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.team-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.team-role, .team-fact {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
