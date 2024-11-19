@@ -340,3 +340,24 @@ body {
 }
 
 
+/* CTA Button Styling */
+.cta {
+    text-align: center; /* Center align the button */
+    margin-top: 20px; /* Add spacing from the content above */
+}
+
+.cta-button {
+    display: inline-block; /* Makes it behave like a button */
+    background-color: #D9E4EC; /* Button background color */
+    color: #000000; /* Text color */
+    font-size: 1.2rem; /* Adjust the font size */
+    padding: 10px 20px; /* Padding for the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.cta-button:hover {
+    background-color: #cae1f1; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
