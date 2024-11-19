@@ -101,7 +101,8 @@ body {
     font-size: 5rem;
     color: #D9E4EC;
     opacity: 0.7;
-    animation: move-diagonal 9s linear infinite; /* Diagonal animation */
+    animation: move-diagonal 10s linear infinite; /* Diagonal animation */
+ 
 }
 
 /* Moving Stars */
@@ -109,8 +110,9 @@ body {
     position: absolute;
     font-size: 2rem;
     color: #D9E4EC;
-    opacity: 0;
-    animation: move-diagonal 10s linear infinite; /* Diagonal animation */
+    opacity: 0.7;
+    animation: move-diagonal 11s linear infinite; /* Diagonal animation */
+
 }
 
 /* Randomize Initial Positions */
@@ -143,7 +145,7 @@ body {
 /* Unified Diagonal Animation */
 @keyframes move-diagonal {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translate(0, 0) scale(1);
     }
     20% {
@@ -151,7 +153,7 @@ body {
     }
     100% {
         transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
-        opacity: 0;
+        opacity: 1;
     }
 }
 
