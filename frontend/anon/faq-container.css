@@ -130,15 +130,17 @@ body {
 .faq-header {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
     background-color: #B2CBD9; /* Cloud color */
+    color: #FFF; /* Text color */
     padding: 10px 15px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    color: #FFF;
+    display: block; /* Ensures the element spans its own line */
+    text-align: center; /* Centers text within the header */
+    margin: 0 auto 20px; /* Centers the header horizontally and adds spacing below */
+    max-width: fit-content; /* Ensures the width fits content dynamically */
 }
+
 
 /* FAQ Body (Answer in Rectangle) */
 .faq-body {
@@ -160,7 +162,7 @@ body {
 /* Moving Decorations */
 .faq-decoration {
     position: absolute;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #D9E4EC;
     opacity: 0.7;
     animation: move-diagonal 8s linear infinite; /* Diagonal animation */
@@ -175,25 +177,25 @@ body {
 .faq-decoration:nth-child(2) {
     top: 30%;
     left: 80%;
-    animation-delay: 2s;
+    animation-delay: 0s;
 }
 
 .faq-decoration:nth-child(3) {
     top: 50%;
     left: 20%;
-    animation-delay: 4s;
+    animation-delay: 0s;
 }
 
 .faq-decoration:nth-child(4) {
     top: 70%;
     left: 90%;
-    animation-delay: 6s;
+    animation-delay: 0s;
 }
 
 .faq-decoration:nth-child(5) {
     top: 90%;
     left: 40%;
-    animation-delay: 8s;
+    animation-delay: 0s;
 }
 
 /* Diagonal Animation */
