@@ -1,89 +1,194 @@
+/* General Page Styling */
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%; /* Avoids any overflow */
-    max-height: 100%;
-    flex-shrink: 0;
-    background-color: #D9C0B2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0; /* Removes any default margin */
-    
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Matches the design theme */
+    color: #333;
+    overflow-x: hidden;
 }
 
-.btn {
-    background-color: #B2CBD9;
-    color: #FFF;
-    font-family: "Playfair Display";
-    font-weight: bold;
-    font-size: 30px;
-    /* font-size: calc(2vw + 10px);  */
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2CBD9; /* Consistent navbar color */
+    padding: 10px 20px; /* Adds spacing for logo and links */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.navbar-logo img {
+    height: 70px;
+    width: auto;
+}
+
+.navbar-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 100px;
+    margin-left: -30px;
+}
+
+.navbar-links a {
+    color: #000;
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
-    max-width: 476px; /* Maximum width for larger screens */
-    height: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    margin-left: 110px;
-    margin-bottom: 100px;
-    margin-top: -80px;
-}
-
-.btn2 {
-    background-color: #B2CBD9;
-    color: #FFF;
-    font-family: "Playpen Sans";
-    font-weight: bold;
     font-size: 30px;
-    /* font-size: calc(2vw + 10px);  */
-    font-weight: 700;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
-    max-width: 476px; /* Maximum width for larger screens */
-    height: auto;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 800px;
+    margin: 120px auto 0;
     padding: 20px;
+    text-align: center;
+}
+
+/* Header for Existing Issues */
+.issues-header {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-family: 'Playpen Sans';
+}
+
+/* Description Box */
+.description-box {
+    position: relative; /* Allow absolute positioning of the confetti canvas */
+    background-color: #D5E0F5; /* Light blue box */
+    padding: 30px;
+    border-radius: 15px;
+    color: #000;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden; /* Ensure confetti stays within the box */
+}
+
+
+/* Form Section */
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.form-container input {
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-container input:focus {
+    border-color: #B2CBD9;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-container button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #333;
+    color: white;
     border: none;
-    margin-left: 110px;
-    margin-bottom: 100px;
-    margin-top: -80px;
-    text-decoration: none; /* Removes underline */
-    transition: text-decoration 0.3s ease; /* Smooth transition effect */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Add underline on hover */
-.btn2:hover {
-    text-decoration: underline; /* Adds underline on hover */
+.form-container button:hover {
+    background-color: #555;
+    transform: scale(1.1);
 }
 
-.button-container {
+/* Decorative Elements */
+.issues-header::before,
+.issues-header::after {
+    content: '⊹ ⁺ 𐔌𓆩 ᩧ ຼ ͡ ৯'; /* Decorative symbols for visual flair */
+    position: static;
+    font-size: 2.5rem;
+    color: #D9E4EC;
+}
+
+.issues-header::after {
+    content: '໒⁀ ᩧຼ𓆪 ꒱ིྀ ⁺ ⊹'; /* Right decorative symbol */
+}
+
+/* Icon Section */
+.icon-container {
     display: flex;
-    justify-content: left;
-    width: 100%; /* Full width of the container */
-    margin-left: 50px; /* Adjust this value to move it left */
+    justify-content: center;
+    gap: 50px; /* Increased spacing between icons */
+    margin-top: 30px;
 }
 
+.icon-item {
+    text-align: center;
+    font-size: 1.5rem; /* Larger text for labels */
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 5rem; /* Increased size of the emojis */
+    color: #ccc; /* Default gray color */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.8; /* Slight transparency by default */
+}
+
+.icon.active {
+    transform: scale(1.2); /* Slightly larger when active */
+    color: #000; /* Fully colored when active */
+    opacity: 1; /* Fully visible when active */
+}
+
+.icon-item p {
+    margin-top: 10px;
+    font-size: 1rem; /* Larger label size */
+    color: #555;
+}
+
+.icon-item.active p {
+    color: #000; /* Darker color for active state */
+}
+
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+}
 
 /* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
+    background-color: #B2CBD9;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -91,104 +196,147 @@ body {
     z-index: 1000;
 }
 
-/* Logo in the navbar */
+/* Navbar Logo */
 .navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 70px;
     width: auto;
 }
 
-/* Navigation links container with flex for center alignment */
-.navbar-links {
-    display: flex;
-    flex-grow: 1; /* Allows it to take the remaining space */
-    justify-content: center; /* Centers the links */
-    gap: 100px; /* Spacing between links */
-    margin-left: -30px;
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
 }
 
-/* Individual navigation links */
-.navbar-links a {
-    color: #000; /* Text color */
-    text-decoration: none;
-    font-family: "Playfair Display", serif;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    font-size: 30px; /* Adjust font size as needed */
+/* Background Stars Container */
+.background-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep stars behind the content */
+    overflow: hidden;
 }
 
-/* Hover effect for links */
-.navbar-links a:hover {
-    text-decoration: underline;
-}
-
-
-/* Main content styling (to account for navbar height) */
-.content {
-    padding-top: 0px; /* Adjust based on navbar height */
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-/* Static bar icon styling */
-.static-bar {
+/* Individual Stars */
+.background-stars .star {
     position: absolute;
-    right: 50px; /* Adjust for spacing from right */
+    font-size: 10rem; /* Default size */
+    color: #D9E4EC; /* Soft white-blue color */
+    opacity: 5; /* Start with higher opacity */
+    animation: diagonal-move-left 15s linear infinite;
 }
 
-.static-bar-icon {
-    height: 30px; /* Adjust icon size */
-    width: auto;
-    cursor: pointer;
+/* Star Sizes */
+.background-stars .star.small {
+    font-size: 2rem;
+    animation-duration: 8s;
 }
 
-/* Issue Section Title Styling */
-.issue-title {
-    font-family: "Playpen Sans", sans-serif;
-    font-size: 96px; /* Adjust size if needed */
-    font-weight: bold;
-    color: #000;
-    margin-top: 200px; /* Increase this value to move it down */
-    margin-bottom: -100px; /* Space between title and description box */
-    position: center; /* No need for transform here */
-    margin-left: 45px;
+.background-stars .star.medium {
+    font-size: 4.5rem;
+    animation-duration: 10s;
 }
 
-/* Description Box and Map Container */
-.content-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* Space between the description box and the map */
-    margin-top: 20px; /* Pushes content down */
-
+.background-stars .star.large {
+    font-size: 6rem;
+    animation-duration: 12s;
 }
 
-/* Description Box Styling */
-.description-box {
-    width: 800px; 
-    height: 500px;
-    padding: 20px;
-    background-color: #D5E0F5;
-    font-family: "Playpen Sans";
-    font-style: normal;
-    flex-shrink: 0;
-    font-size: 25px;
-    line-height: normal;
-    font-weight: 700;
-    color: #000;
-    box-sizing: border-box;
-    margin-top: 100px; 
-    margin-right: 90px;
-    margin-bottom: -30px;
-
-
-} 
-
-/* Map Image Styling */
-.map-image {
-    width: 650px;
-    height: 800px;
-    border: 2px solid #000; /* Black border */
-    border-radius: 4px; /* Optional: rounded corners */
-    margin-top: -70px;
+/* Random Initial Positions - Left Side */
+.background-stars .star.left:nth-child(1) {
+    top: 5%;
+    left: -20%;
+    animation-delay: 0s;
 }
+.background-stars .star.left:nth-child(2) {
+    top: 15%;
+    left: -30%;
+    animation-delay: 2s;
+}
+.background-stars .star.left:nth-child(3) {
+    top: 25%;
+    left: -40%;
+    animation-delay: 4s;
+}
+.background-stars .star.left:nth-child(4) {
+    top: 35%;
+    left: -50%;
+    animation-delay: 6s;
+}
+.background-stars .star.left:nth-child(5) {
+    top: 45%;
+    left: -60%;
+    animation-delay: 8s;
+}
+
+/* Random Initial Positions - Right Side */
+.background-stars .star.right:nth-child(1) {
+    top: 10%;
+    right: -20%;
+    animation-delay: 1s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(2) {
+    top: 20%;
+    right: -30%;
+    animation-delay: 3s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(3) {
+    top: 30%;
+    right: -40%;
+    animation-delay: 5s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(4) {
+    top: 40%;
+    right: -50%;
+    animation-delay: 7s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(5) {
+    top: 50%;
+    right: -60%;
+    animation-delay: 9s;
+    animation-name: diagonal-move-right;
+}
+
+/* Diagonal Movement Animation for Left Side */
+@keyframes diagonal-move-left {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(80vw, 80vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+        opacity: 1;
+    }
+}
+
+/* Diagonal Movement Animation for Right Side */
+@keyframes diagonal-move-right {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-80vw, 80vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100vw, 100vh);
+        opacity: 1;
+    }
+}
+
+
