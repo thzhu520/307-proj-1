@@ -18,11 +18,6 @@
     width: auto;
 }
 
-.navbar-logo img {
-    height: 70px; /* Adjust height as needed */
-    width: auto;
-}
-
 /* Navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;

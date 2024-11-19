@@ -2,48 +2,53 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    max-width: 100%; /* Avoids any overflow */
+    max-width: 100%; /* Avoid overflow */
     max-height: 100%;
-    flex-shrink: 0;
-    background-color: #D2D5EE;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Removes any default margin */
+    background-color: #D2D5EE;
     background-image: url(paper_airplane.png);
     background-repeat: no-repeat;
-    background-position: center 35%; /* This shifts the background image up slightly */
-    background-size: 700px;
+    background-position: center 70%;
+    background-size: 30rem; /* Use rem for scalable background size */
 }
-
 
 .btn {
     background-color: #7BB4D4;
     color: #000;
     font-family: "Playfair Display", serif;
-    font-size: calc(2vw + 10px); /* Responsive font size */
+    font-size: 1.5rem; /* Responsive size */
     font-weight: 700;
-    border-radius: 20px;
+    border-radius: 1rem; /* Rounded corners */
     cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
-    max-width: 476px; /* Maximum width for larger screens */
-    height: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem; /* Padding for button size */
     text-align: center;
     border: none;
-    margin-top: 5px; /* Space between buttons */
+    margin: 1rem 0; /* Space between buttons */
 }
 
-.btn-anon {
+
+.btn-anon,
+.btn-admin {
+    background-color: #7BB4D4;
+    color: #000;
+    width: 25rem;
+    padding: 1.5rem 2rem; /* Proportional padding */
+    font-family: "Playfair Display", serif;
+    font-size: 2rem; /* Button font size */
+    font-weight: 700;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem; /* Space between buttons */
+}
+/* .btn-anon {
     display: flex;
-    width: auto;/*476px;*/
-    height: auto;/*129px;*/
-    padding: 40px 120px;
+    width: auto;
+    height: auto;
+    padding: 2rem;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -51,9 +56,9 @@ body {
 
     border-radius: 20px;
     background: #7BB4D4;
-    color: #000; /* Font color */
-    font-family: "Playfair Display", serif; /* Font family */
-    font-size: 40px;
+    color: #000; 
+    font-family: "Playfair Display", serif; 
+    font-size: 3rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -63,20 +68,18 @@ body {
 
 .btn-admin {
     display: flex;
-    width: auto;/*476px;*/
-    height: auto; /*129px;*/
+    width: auto;
+    height: auto; 
     padding: 40px 120px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
-
     border-radius: 20px;
-    background: #7BB4D4; /* Light blue background */
-
-    color: #000; /* Font color */
-    font-family: "Playfair Display", serif; /* Font family */
-    font-size: 40px;
+    background: #7BB4D4; 
+    color: #000; 
+    font-family: "Playfair Display", serif; 
+    font-size: 3rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -85,24 +88,21 @@ body {
     cursor: pointer;
 
     margin-top: 1000px;           
-}
+} */
 
 .icon {
-    width: auto; /* Define a specific size for consistency */
-    height: auto;
-    margin: 0 auto 20px;
-    position: absolute;
-    top: 0;
+    width: 25rem; /* Consistent size */
+    margin: 0.5rem auto; /* Reduced spacing from the top */
+    transform: translateY(-5rem); /* Moves the logo up */
 }
+
 
 .threedots {
     position: absolute;
-    top: 20px; /* Adjust based on desired spacing from top */
-    right: 20px; /* Adjust based on desired spacing from right */
-    width: 50px; /* Adjust size if necessary */
-    height: auto; /* Maintain aspect ratio */
+    top: 1rem;
+    right: 1rem;
+    width: 3rem; /* Maintain consistent size */
 }
-
 
 
 .buttons-wrapper {
@@ -110,8 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding-top: 100px; */
-    transform: translateY(50px);
+    transform: translateY(-25px); /* Move the buttons up by reducing this value */
 }
 
 
@@ -123,7 +122,7 @@ body {
     margin: 3px 0; /* Adds vertical space between buttons */
 }
 
-.btn-anon,
+/* .btn-anon,
 .btn-admin {
     background-color: #7BB4D4;
     color: #000;
@@ -138,13 +137,17 @@ body {
     font-weight: 700;
     border: none;
     cursor: pointer;
-}
+} */
 
 .subtext-anon {
     font-family: "Playpen Sans", sans-serif;
     font-weight: bold;
     font-size: 20px;
     color: #FFF;
-    margin-top: 2px;
-    text-align: right; /* Ensures the text aligns within the element */
+    margin-top: -0.80rem; /* Negative margin to move it closer to the button */
+    text-align: right; /* Center-aligns the text */
+}
+
+html {
+    font-size: 16px; /* Default browser size is 16px; adjust as needed */
 }

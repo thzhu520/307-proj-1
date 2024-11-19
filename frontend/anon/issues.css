@@ -44,7 +44,7 @@ body {
     color: #FFF;
     font-family: "Playpen Sans";
     font-weight: bold;
-    font-size: 30px;
+    font-size: 2rem;
     /* font-size: calc(2vw + 10px);  */
     font-weight: 700;
     border-radius: 20px;
@@ -58,11 +58,12 @@ body {
     align-items: center;
     text-align: center;
     border: none;
-    margin-left: 110px;
-    margin-bottom: 100px;
-    margin-top: -80px;
+    margin-left: 4.49rem;
+    margin-bottom: 5rem;
+    margin-top: -10rem;
     text-decoration: none; /* Removes underline */
     transition: text-decoration 0.3s ease; /* Smooth transition effect */
+
 }
 
 /* Add underline on hover */
@@ -93,7 +94,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
     width: auto;
 }
 
@@ -102,7 +103,7 @@ body {
     display: flex;
     flex-grow: 1; /* Allows it to take the remaining space */
     justify-content: center; /* Centers the links */
-    gap: 100px; /* Spacing between links */
+    gap: 50px; /* Spacing between links */
     margin-left: -30px;
 }
 
@@ -114,7 +115,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 30px; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Button font size */
 }
 
 /* Hover effect for links */
@@ -133,11 +134,11 @@ body {
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 50px; /* Adjust for spacing from right */
+    right: 40px; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
-    height: 30px; /* Adjust icon size */
+    height: 1rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
 }
@@ -145,14 +146,34 @@ body {
 /* Issue Section Title Styling */
 .issue-title {
     font-family: "Playpen Sans", sans-serif;
-    font-size: 96px; /* Adjust size if needed */
+    font-size: 3rem; /* Adjust size if needed */
     font-weight: bold;
-    color: #000;
-    margin-top: 200px; /* Increase this value to move it down */
-    margin-bottom: -100px; /* Space between title and description box */
+    color: #FFF;
+    margin-top: 7rem; /* Increase this value to move it down */
+    margin-bottom: -8rem; /* Space between title and description box */
     position: center; /* No need for transform here */
-    margin-left: 45px;
+    margin-left: 8rem;
 }
+
+/* Decorative Elements for Title */
+.issue-title::before,
+.issue-title::after {
+    font-family: "Playpen Sans", sans-serif; /* Match the title font */
+    font-size: 2.5rem; /* Slightly smaller than the title font */
+    color: #FFF; /* Adjust decorative color */
+}
+
+.issue-title::before {
+    content: 'ᐠ.ᝰ'; /* Decorative text before */
+    margin-right: 0.5rem; /* Space between decoration and title */
+}
+
+.issue-title::after {
+    content: 'ᝰ.ᐟ'; /* Decorative text after */
+    margin-left: 0.5rem; /* Space between title and decoration */
+}
+
+
 
 /* Description Box and Map Container */
 .content-container {
@@ -164,9 +185,9 @@ body {
 }
 
 /* Description Box Styling */
-.description-box {
-    width: 800px; 
-    height: 500px;
+/* .description-box {
+    width: 50rem; 
+    height: 30rem;
     padding: 20px;
     background-color: #D5E0F5;
     font-family: "Playpen Sans";
@@ -182,13 +203,35 @@ body {
     margin-bottom: -30px;
 
 
-} 
+}  */
+
+.description-box {
+    width: 40vw; /* Use vw to make it responsive to the screen width */
+    height: 45vh; /* Use vh to make it responsive to the screen height */
+    padding: 2rem; /* Adjust padding for consistent spacing */
+    background-color: #D5E0F5;
+    font-family: "Playpen Sans";
+    font-style: normal;
+    flex-shrink: 0;
+    font-size: 1.5rem; /* Adjust font size */
+    line-height: 1.8; /* Better readability */
+    font-weight: 700;
+    color: #000;
+    box-sizing: border-box;
+    margin-top: 7rem; /* Space from the top */
+    margin-right: 5rem; /* Space from the map */
+    margin-left: 5rem;
+    margin-bottom: -2rem; /* Adjust bottom spacing if necessary */
+    border-radius: 1rem; /* Rounded corners for aesthetics */
+}
+
 
 /* Map Image Styling */
 .map-image {
-    width: 650px;
-    height: 800px;
+    width: 30rem;
+    height: 40rem;
     border: 2px solid #000; /* Black border */
     border-radius: 4px; /* Optional: rounded corners */
-    margin-top: -70px;
+    margin-top: 0rem;
+    margin-right: 5rem;
 }
