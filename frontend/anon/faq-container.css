@@ -71,22 +71,13 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
 }
 
-/* FAQ Section */
-.faq-section {
-    text-align: center;
-    background-color: #D9C0B2; /* Matches the rest of the design */
-    padding: 50px 20px;
-    position: relative;
-    overflow: hidden; /* Prevent extra elements from scrolling */
-}
-
 /* FAQ Title Styling */
 .faq-title {
     font-family: 'Playpen Sans', sans-serif; /* Matches the playful font style */
     font-size: 3rem; /* Bold and larger font for emphasis */
     font-weight: bold;
     color: #ffffff; /* Black color for text */
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: center; /* Center aligns the title */
     position: relative; /* For decorative elements */
     margin-top: 60px; /* Add spacing from the top */
@@ -139,6 +130,16 @@ body {
 }
 
 
+/* FAQ Section */
+.faq-section {
+    text-align: center;
+    background-color: #D9C0B2; /* Matches the rest of the design */
+    padding: 50px 20px;
+    position: relative; /* Ensures proper stacking context for z-index */
+    overflow: hidden; /* Prevent extra elements from scrolling */
+    z-index: 0; /* Base layer for the FAQ section */
+}
+
 /* FAQ Header (Question in Cloud) */
 .faq-header {
     font-size: 1.2rem;
@@ -152,6 +153,8 @@ body {
     text-align: center; /* Centers text within the header */
     margin: 0 auto 20px; /* Centers the header horizontally and adds spacing below */
     max-width: fit-content; /* Ensures the width fits content dynamically */
+    z-index: 1; /* Ensures the header is above decorations */
+    position: relative; /* Necessary for z-index to work */
 }
 
 
@@ -175,10 +178,11 @@ body {
 /* Moving Decorations */
 .faq-decoration {
     position: absolute;
-    font-size: 4rem;
+    font-size: 6rem;
     color: #D9E4EC;
-    opacity: 0.7;
-    animation: move-diagonal 8s linear infinite; /* Diagonal animation */
+    opacity: 50; /* Subtle background effect */
+    animation: move-diagonal 20s linear infinite; /* Diagonal animation */
+    z-index: -1; /* Move decorations behind all other elements */
 }
 
 .faq-decoration:nth-child(1) {
@@ -211,17 +215,17 @@ body {
     animation-delay: 0s;
 }
 
-/* Diagonal Animation */
+/* Unified Diagonal Animation */
 @keyframes move-diagonal {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translate(0, 0) scale(1);
     }
     20% {
         opacity: 1;
     }
     100% {
-        transform: translate(20vw, 20vh) scale(1.2); /* Move diagonally */
-        opacity: 0;
+        transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
+        opacity: 1;
     }
 }
