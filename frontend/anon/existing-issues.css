@@ -1,0 +1,366 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    font-weight: bold;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2CBD9; /* Adjust the color as needed */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logo in the navbar */
+.navbar-logo {
+    margin-right: auto; /* Push the logo to the far left */
+    padding-left: 20px; /* Add some padding to align the logo */
+}
+
+.navbar-logo img {
+    height: 70px; /* Adjust height as needed */
+    width: auto;
+}
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex-grow: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 100px; /* Spacing between links */
+    margin-left: -30px;
+}
+
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 30px; /* Adjust font size as needed */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 800px;
+    margin: 120px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header for Existing Issues */
+.issues-header {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-family: 'Playpen Sans';
+}
+
+/* Description Box */
+.description-box {
+    position: relative; /* Allow absolute positioning of the confetti canvas */
+    background-color: #D5E0F5; /* Light blue box */
+    padding: 30px;
+    border-radius: 15px;
+    color: #000;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden; /* Ensure confetti stays within the box */
+}
+
+
+/* Form Section */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.form-container input {
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-container input:focus {
+    border-color: #B2CBD9;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-container button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.form-container button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* Decorative Elements */
+.issues-header::before,
+.issues-header::after {
+    content: '⊹ ⁺ 𐔌𓆩 ᩧ ຼ ͡ ৯'; /* Decorative symbols for visual flair */
+    position: static;
+    font-size: 2.5rem;
+    color: #D9E4EC;
+}
+
+.issues-header::after {
+    content: '໒⁀ ᩧຼ𓆪 ꒱ིྀ ⁺ ⊹'; /* Right decorative symbol */
+}
+
+/* Icon Section */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Increased spacing between icons */
+    margin-top: 30px;
+}
+
+.icon-item {
+    text-align: center;
+    font-size: 1.5rem; /* Larger text for labels */
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 5rem; /* Increased size of the emojis */
+    color: #ccc; /* Default gray color */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.8; /* Slight transparency by default */
+}
+
+.icon.active {
+    transform: scale(1.2); /* Slightly larger when active */
+    color: #000; /* Fully colored when active */
+    opacity: 1; /* Fully visible when active */
+}
+
+.icon-item p {
+    margin-top: 10px;
+    font-size: 1rem; /* Larger label size */
+    color: #555;
+}
+
+.icon-item.active p {
+    color: #000; /* Darker color for active state */
+}
+
+/* General Body Styling */
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+}
+
+/* Background Stars Container */
+.background-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep stars behind the content */
+    overflow: hidden;
+}
+
+/* Individual Stars */
+.background-stars .star {
+    position: absolute;
+    font-size: 10rem; /* Default size */
+    color: #D9E4EC; /* Soft white-blue color */
+    opacity: 5; /* Start with higher opacity */
+    animation: diagonal-move-left 15s linear infinite;
+}
+
+/* Star Sizes */
+.background-stars .star.small {
+    font-size: 2rem;
+    animation-duration: 8s;
+}
+
+.background-stars .star.medium {
+    font-size: 4.5rem;
+    animation-duration: 10s;
+}
+
+.background-stars .star.large {
+    font-size: 6rem;
+    animation-duration: 12s;
+}
+
+/* Random Initial Positions - Left Side */
+.background-stars .star.left:nth-child(1) {
+    top: 5%;
+    left: -20%;
+    animation-delay: 0s;
+}
+.background-stars .star.left:nth-child(2) {
+    top: 15%;
+    left: -30%;
+    animation-delay: 2s;
+}
+.background-stars .star.left:nth-child(3) {
+    top: 25%;
+    left: -40%;
+    animation-delay: 4s;
+}
+.background-stars .star.left:nth-child(4) {
+    top: 35%;
+    left: -50%;
+    animation-delay: 6s;
+}
+.background-stars .star.left:nth-child(5) {
+    top: 45%;
+    left: -60%;
+    animation-delay: 8s;
+}
+
+/* Random Initial Positions - Right Side */
+.background-stars .star.right:nth-child(1) {
+    top: 10%;
+    right: -20%;
+    animation-delay: 1s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(2) {
+    top: 20%;
+    right: -30%;
+    animation-delay: 3s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(3) {
+    top: 30%;
+    right: -40%;
+    animation-delay: 5s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(4) {
+    top: 40%;
+    right: -50%;
+    animation-delay: 7s;
+    animation-name: diagonal-move-right;
+}
+.background-stars .star.right:nth-child(5) {
+    top: 50%;
+    right: -60%;
+    animation-delay: 9s;
+    animation-name: diagonal-move-right;
+}
+
+/* Diagonal Movement Animation for Left Side */
+@keyframes diagonal-move-left {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(80vw, 80vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+        opacity: 1;
+    }
+}
+
+/* Diagonal Movement Animation for Right Side */
+@keyframes diagonal-move-right {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-80vw, 80vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100vw, 100vh);
+        opacity: 1;
+    }
+}
+
+
+/* CTA Button Styling */
+.cta {
+    text-align: center; /* Center align the button */
+    margin-top: 20px; /* Add spacing from the content above */
+}
+
+.cta-button {
+    display: inline-block; /* Makes it behave like a button */
+    background-color: #D9E4EC; /* Button background color */
+    color: #000000; /* Text color */
+    font-size: 1.2rem; /* Adjust the font size */
+    padding: 10px 20px; /* Padding for the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.cta-button:hover {
+    background-color: #cae1f1; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
