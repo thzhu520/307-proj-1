@@ -227,12 +227,12 @@ body {
 .team-description {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #333;
+    color: #000000;
 }
 
 .team-role, .team-fact {
     font-size: 0.85rem;
-    color: #555;
+    color: #000000;
     margin-top: 5px;
 }
 
