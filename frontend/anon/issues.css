@@ -1,24 +1,10 @@
+/* General Body Styling */
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%; /* Avoids any overflow */
-    max-height: 100%;
-    flex-shrink: 0;
-    background-color: #D9C0B2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0; /* Removes any default margin */
-    
-}
-
-.btn {
-    background-color: #B2CBD9;
-    color: #FFF;
-    font-family: "Playfair Display";
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #D9C0B2; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
     font-weight: bold;
     font-size: 30px;
     /* font-size: calc(2vw + 10px);  */
@@ -66,19 +52,6 @@ body {
 
 }
 
-/* Add underline on hover */
-.btn2:hover {
-    text-decoration: underline; /* Adds underline on hover */
-}
-
-.button-container {
-    display: flex;
-    justify-content: left;
-    width: 100%; /* Full width of the container */
-    margin-left: 50px; /* Adjust this value to move it left */
-}
-
-
 /* Navbar styling */
 .navbar {
     position: fixed;
@@ -93,6 +66,11 @@ body {
 }
 
 /* Logo in the navbar */
+.navbar-logo {
+    margin-right: auto; /* Push the logo to the far left */
+    padding-left: 20px; /* Add some padding to align the logo */
+}
+
 .navbar-logo img {
     height: 3rem; /* Adjust as needed */
     width: auto;
@@ -105,6 +83,19 @@ body {
     justify-content: center; /* Centers the links */
     gap: 50px; /* Spacing between links */
     margin-left: -30px;
+}
+
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
 }
 
 /* Individual navigation links */
@@ -121,14 +112,6 @@ body {
 /* Hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
-}
-
-
-/* Main content styling (to account for navbar height) */
-.content {
-    padding-top: 0px; /* Adjust based on navbar height */
-    margin: 0 auto;
-    max-width: 1200px;
 }
 
 /* Static bar icon styling */
@@ -175,8 +158,21 @@ body {
 
 
 
-/* Description Box and Map Container */
-.content-container {
+/* Decorative Elements */
+.issues-header::before,
+.issues-header::after {
+    content: '⊹ ⁺ 𐔌𓆩 ᩧ ຼ ͡ ৯'; /* Decorative symbols for visual flair */
+    position: static;
+    font-size: 2.5rem;
+    color: #D9E4EC;
+}
+
+.issues-header::after {
+    content: '໒⁀ ᩧຼ𓆪 ꒱ིྀ ⁺ ⊹'; /* Right decorative symbol */
+}
+
+/* Icon Section */
+.icon-container {
     display: flex;
     align-items: flex-start;
     gap: 20px; /* Space between the description box and the map */
