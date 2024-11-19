@@ -12,8 +12,13 @@
 }
 
 /* Logo in the navbar */
+.navbar-logo {
+    margin-right: auto; /* Push the logo to the far left */
+    padding-left: 20px; /* Add some padding to align the logo */
+}
+
 .navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 70px; /* Adjust height as needed */
     width: auto;
 }
 
@@ -55,6 +60,17 @@
     text-decoration: underline;
 }
 
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
 
 /* General Body Styling */
 body {
