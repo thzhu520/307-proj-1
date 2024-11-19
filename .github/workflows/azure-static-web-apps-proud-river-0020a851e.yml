@@ -19,20 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-
-      # Install frontend dependencies and build the frontend
-      - name: Build Frontend
-        working-directory: frontend
-        run: |
-          npm install
-          npm run build
-
-      # Install backend dependencies
-      - name: Install Backend Dependencies
-        working-directory: packages/express-backend
-        run: npm install
-
-      # Deploy both frontend and backend
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
