@@ -11,9 +11,9 @@
     z-index: 1000;
 }
 
-/* Logo in the navbar */
+
 .navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 70px; /* Adjust height as needed */
     width: auto;
 }
 
@@ -24,6 +24,19 @@
     justify-content: center; /* Centers the links */
     gap: 100px; /* Spacing between links */
     margin-left: -30px;
+}
+
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
 }
 
 /* Individual navigation links */
@@ -42,6 +55,17 @@
     text-decoration: underline;
 }
 
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 50px; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 30px; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
 
 /* General Body Styling */
 body {
@@ -101,7 +125,8 @@ body {
     font-size: 5rem;
     color: #D9E4EC;
     opacity: 0.7;
-    animation: move-diagonal 9s linear infinite; /* Diagonal animation */
+    animation: move-diagonal 10s linear infinite; /* Diagonal animation */
+ 
 }
 
 /* Moving Stars */
@@ -109,8 +134,9 @@ body {
     position: absolute;
     font-size: 2rem;
     color: #D9E4EC;
-    opacity: 0;
-    animation: move-diagonal 10s linear infinite; /* Diagonal animation */
+    opacity: 0.7;
+    animation: move-diagonal 11s linear infinite; /* Diagonal animation */
+
 }
 
 /* Randomize Initial Positions */
@@ -143,7 +169,7 @@ body {
 /* Unified Diagonal Animation */
 @keyframes move-diagonal {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translate(0, 0) scale(1);
     }
     20% {
@@ -151,7 +177,7 @@ body {
     }
     100% {
         transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
-        opacity: 0;
+        opacity: 1;
     }
 }
 
@@ -196,12 +222,12 @@ body {
 .team-description {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #333;
+    color: #000000;
 }
 
 .team-role, .team-fact {
     font-size: 0.85rem;
-    color: #555;
+    color: #000000;
     margin-top: 5px;
 }
 

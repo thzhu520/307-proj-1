@@ -15,28 +15,19 @@ body {
     
 }
 
+/* Login Button */
 .btn {
     background-color: #B2CBD9;
     color: #000;
     font-family: "Playfair Display", serif;
     font-weight: 700;
-    font-size: 20px;
-    /* font-size: calc(2vw + 10px);  */
-    font-weight: 700;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
-    max-width: 476px; /* Maximum width for larger screens */
-    height: auto;
-    padding: 10px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    font-size: 18px;
+    padding: 10px;
     border: none;
-    margin-left: 110px;
-    margin-bottom: 100px;
-    margin-top: -80px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 /* Navbar styling */
@@ -63,15 +54,105 @@ body {
     display: flex;
 }
 
-.admin-login{
+.admin-login {
     color: #000;
     text-align: center;
     font-family: "Playfair Display";
-    font-size: 60px;
-    font-style: bold;
+    font-size: 2.30rem;
     font-weight: 700;
     line-height: normal; 
-    margin: 0 auto; /* Centers the element itself in its container */
-    transform: l;;;
+    margin: 0 auto; /* Centers it horizontally */
+    position: absolute; /* Allow precise positioning */
+    top: 50%; /* Vertically centers it */
+    left: 50%; /* Horizontally centers it */
+    transform: translate(-50%, -50%); /* Adjusts for the element's own dimensions */
 }
 
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Adjust Form and Image Alignment */
+.form-and-image {
+    display: flex;
+    flex-direction: row;
+    gap: 100px; /* Larger space between form and image */
+    align-items: center; /* Vertically align */
+    justify-content: center; /* Center horizontally */
+    flex-wrap: wrap; /* Stack vertically on smaller screens */
+    margin-top: 50px;
+}
+
+
+/* Login Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+    width: 400px; /* Adjust width as needed */
+}
+
+/* Labels for Username and Password */
+.login-label {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    position: relative; /* Needed for pseudo-elements */
+    display: inline-block; /* Ensures proper alignment */
+}
+
+/* Adjust the input boxes */
+.login-input {
+    width: 400px; /* Wider input fields */
+    padding: 15px; /* Increase padding for larger appearance */
+    font-size: 18px; /* Adjust font size for readability */
+    border: 2px solid #B2CBD9; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    font-family: "Playfair Display", serif;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Input Focus Effect */
+.login-input:focus {
+    outline: none; /* Removes default outline */
+    border-color: #708DAD; /* Highlight color */
+    box-shadow: 0 0 5px #708DAD; /* Optional shadow effect */
+}
+
+/* Decorative Elements for Labels */
+.login-label::before,
+.login-label::after {
+    font-family: "Playfair Display", serif; /* Matches the label font */
+    font-size: 18px; /* Slightly smaller than the label */
+    color: #FFF; /* Decorative color */
+}
+
+.login-label::before {
+    content: '⋆｡‧˚ʚ'; /* Decorative text before */
+    margin-right: 8px; /* Space between decoration and label */
+}
+
+.login-label::after {
+    content: 'ɞ˚‧｡⋆'; /* Decorative text after */
+    margin-left: 8px; /* Space between decoration and label */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #708DAD;
+    color: #FFF;
+}
+
+
+/* Adjust Login Image */
+.login-image img {
+    max-width: 400px; /* Image scales up to 400px */
+    width: 40%; /* Adjust relative to screen size */
+    height: auto; /* Maintain aspect ratio */
+}
