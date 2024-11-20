@@ -1,15 +1,120 @@
-.report-search {
-    float: right;
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2CBD9; /* Adjust the color as needed */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logo in the navbar */
+.navbar-logo img {
+    height: 70px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex-grow: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 100px; /* Spacing between links */
+    margin-left: -30px;
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 30px; /* Adjust font size as needed */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Style for search box */
+.report-search input[type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.report-search button {
+    width: 120px;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
     font-size: 17px;
     border: none;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
-  }
+    transition: background-color 0.3s ease;
+}
 
-  .report-search {
-    overflow: hidden;
-    background-color: #e9e9e9;
-  }
+.report-search button:hover {
+    background: #1769aa;
+    color: #fff;
+}
+
+/* Clearfix for form */
+.report-search::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content container */
+.existing-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Description Box Styling */
+.existing-description {
+    padding: 20px;
+    background-color: #D5E0F5;
+    font-family: "Playpen Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    border-radius: 10px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .existing-description {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .report-search input[type=text],
+    .report-search button {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .report-search input[type=text] {
+        margin-bottom: 10px;
+    }
+}
