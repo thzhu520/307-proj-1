@@ -162,7 +162,7 @@ body {
 .issue-title::after {
     font-family: "Playpen Sans", sans-serif; /* Match the title font */
     font-size: 2.5rem; /* Slightly smaller than the title font */
-    color: #FFF; /* Adjust decorative color */
+    color: #D9E4EC; /* Adjust decorative color */
 }
 
 .issue-title::before {

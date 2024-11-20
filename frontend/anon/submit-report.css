@@ -18,6 +18,23 @@ body {
     margin-top: 3rem;
 }
 
+.form-title::before,
+.form-title::after {
+    font-family: "Playpen Sans", sans-serif; /* Match the title font */
+    font-size: 2.5rem; /* Slightly smaller than the title font */
+    color: #D9E4EC; /* Adjust decorative color */
+}
+
+.form-title::before {
+    content: 'ᡣ𐭩 •｡ꪆৎ ˚⋅'; /* Decorative text before */
+    margin-right: 0.5rem; /* Space between decoration and title */
+}
+
+.form-title::after {
+    content: '⋅˚ꪆৎ｡•ᡣ𐭩'; /* Decorative text after */
+    margin-left: 0.5rem; /* Space between title and decoration */
+}
+
 /* Content container to hold form and map side by side */
 .content-container {
     display: flex;
