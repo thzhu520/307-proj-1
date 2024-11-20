@@ -1,20 +1,22 @@
-/* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
-    padding: 10px 20px;
+    background-color: #B2CBD9; /* Same as in all pages */
+    padding: 10px 20px; /* Adjust padding for consistency */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
 }
 
 
+/* Logo in the navbar */
 .navbar-logo img {
-    height: 70px; /* Adjust height as needed */
+    height: 3rem; /* Adjust as needed */
     width: auto;
+    margin-left: -1.25rem;
 }
 
 /* Navigation links container with flex for center alignment */
@@ -22,21 +24,8 @@
     display: flex;
     flex-grow: 1; /* Allows it to take the remaining space */
     justify-content: center; /* Centers the links */
-    gap: 100px; /* Spacing between links */
-    margin-left: -30px;
-}
-
-
-/* Static bar icon styling */
-.static-bar {
-    position: absolute;
-    right: 50px; /* Adjust for spacing from right */
-}
-
-.static-bar-icon {
-    height: 30px; /* Adjust icon size */
-    width: auto;
-    cursor: pointer;
+    gap: 50px; /* Spacing between links */
+    margin-left: -50px;
 }
 
 /* Individual navigation links */
@@ -47,7 +36,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 30px; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Button font size */
 }
 
 /* Hover effect for links */
@@ -55,14 +44,22 @@
     text-decoration: underline;
 }
 
+
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 /* Static bar icon styling */
 .static-bar {
-    position: absolute;
-    right: 50px; /* Adjust for spacing from right */
+    position: center;
+    right: 6rem; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
-    height: 30px; /* Adjust icon size */
+    height: 1rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
 }
@@ -71,12 +68,24 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; /* Avoids any overflow */
+    max-height: 100%;
     font-family: 'Playpen Sans', sans-serif;
     background-color: #D9C0B2; /* Tan/Beige background color */
     color: #333; /* Standard dark text color */
     font-weight: bold;
     overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Start from the top */
+    align-items: center; /* Center the content horizontally */
+    background-color: #D9C0B2; /* Consistent background color */
+
 }
+
+
 
 /* Team Section */
 .team-section {

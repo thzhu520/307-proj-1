@@ -2,12 +2,21 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; /* Avoids any overflow */
+    max-height: 100%;
     font-family: 'Playpen Sans', sans-serif;
     background-color: #D9C0B2; /* Tan/Beige background color */
     color: #333; /* Standard dark text color */
     font-weight: bold;
     overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Start from the top */
+    align-items: center; /* Center the content horizontally */
 }
+
 
 /* Navbar styling */
 .navbar {
@@ -23,13 +32,8 @@ body {
 }
 
 /* Logo in the navbar */
-.navbar-logo {
-    margin-right: auto; /* Push the logo to the far left */
-    padding-left: 20px; /* Add some padding to align the logo */
-}
-
 .navbar-logo img {
-    height: 70px; /* Adjust height as needed */
+    height: 3rem; /* Adjust as needed */
     width: auto;
 }
 
@@ -38,21 +42,8 @@ body {
     display: flex;
     flex-grow: 1; /* Allows it to take the remaining space */
     justify-content: center; /* Centers the links */
-    gap: 100px; /* Spacing between links */
+    gap: 50px; /* Spacing between links */
     margin-left: -30px;
-}
-
-
-/* Static bar icon styling */
-.static-bar {
-    position: absolute;
-    right: 50px; /* Adjust for spacing from right */
-}
-
-.static-bar-icon {
-    height: 30px; /* Adjust icon size */
-    width: auto;
-    cursor: pointer;
 }
 
 /* Individual navigation links */
@@ -63,7 +54,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 30px; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Button font size */
 }
 
 /* Hover effect for links */
@@ -71,14 +62,21 @@ body {
     text-decoration: underline;
 }
 
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 50px; /* Adjust for spacing from right */
+    right: 2.39rem; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
-    height: 30px; /* Adjust icon size */
+    height: 1rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
 }
@@ -94,7 +92,7 @@ body {
 /* Header for Existing Issues */
 .issues-header {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: bolder;
     color: #ffffff;
     margin-bottom: 30px;
     font-family: 'Playpen Sans';
@@ -205,15 +203,6 @@ body {
     color: #000; /* Darker color for active state */
 }
 
-/* General Body Styling */
-.body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playpen Sans', sans-serif;
-    background-color: #D9C0B2; /* Tan/Beige background color */
-    color: #333; /* Standard dark text color */
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
-}
 
 /* Background Stars Container */
 .background-stars {

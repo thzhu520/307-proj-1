@@ -98,6 +98,8 @@ body {
     width: auto;
 }
 
+
+
 /* Navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;
@@ -134,7 +136,7 @@ body {
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 40px; /* Adjust for spacing from right */
+    right: 2.39rem; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
@@ -184,26 +186,6 @@ body {
 
 }
 
-/* Description Box Styling */
-/* .description-box {
-    width: 50rem; 
-    height: 30rem;
-    padding: 20px;
-    background-color: #D5E0F5;
-    font-family: "Playpen Sans";
-    font-style: normal;
-    flex-shrink: 0;
-    font-size: 25px;
-    line-height: normal;
-    font-weight: 700;
-    color: #000;
-    box-sizing: border-box;
-    margin-top: 100px; 
-    margin-right: 90px;
-    margin-bottom: -30px;
-
-
-}  */
 
 .description-box {
     width: 40vw; /* Use vw to make it responsive to the screen width */
