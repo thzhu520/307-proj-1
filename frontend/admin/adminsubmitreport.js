@@ -24,7 +24,7 @@ document.getElementById("reportForm").addEventListener("submit", async function(
         if (response.ok) {
             alert("Report submitted successfully!");
             document.getElementById("reportForm").reset();
-            window.location.href = "index.html"; // Redirect to home or another page
+            window.location.href = "admin/adminsubmit-report.html"; // Redirect to home or another page
         } else {
             alert("Failed to submit the report.");
         }
