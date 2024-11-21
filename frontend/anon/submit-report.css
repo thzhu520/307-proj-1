@@ -70,7 +70,7 @@ body {
 /* Input and textarea styling */
 .question-container input[type="text"],
 .question-container textarea,
-.question-container input[type="file"] {
+.question-container input[type="file"] { 
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -89,7 +89,7 @@ body {
 /* Textarea specific styling */
 .question-container textarea {
     resize: vertical;
-    height: 80px;
+    height: 2.5rem;
 }
 
 /* Submit button styling */

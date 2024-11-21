@@ -14,8 +14,9 @@
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
     width: auto;
+    margin-left: -1.21rem;
 }
 
 /* Navigation links container with flex for center alignment */
@@ -23,7 +24,7 @@
     display: flex;
     flex-grow: 1; /* Allows it to take the remaining space */
     justify-content: center; /* Centers the links */
-    gap: 100px; /* Spacing between links */
+    gap: 50px; /* Spacing between links */
     margin-left: -30px;
 }
 
@@ -35,7 +36,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 30px; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Button font size */
 }
 
 /* Hover effect for links */
@@ -46,11 +47,11 @@
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 50px; /* Adjust for spacing from right */
+    right: 4rem; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
-    height: 30px; /* Adjust icon size */
+    height: 1rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
 }
