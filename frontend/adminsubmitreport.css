@@ -1,0 +1,216 @@
+/* General Styling */
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; /* Avoids any overflow */
+    max-height: 100%;
+    flex-shrink: 0;
+    background-color: #B3D6EB;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Removes any default margin */
+    
+}
+
+/* Form title styling */
+.form-title {
+    font-size: 2.5rem;
+    font-family: 'Playpen Sans', sans-serif;
+    color: #FFF;
+    text-align: center;
+    /* margin: 20px 0;  */
+    margin-bottom: -12rem;
+    padding: 9px;
+    margin-top: 3rem;
+}
+
+.form-title::before,
+.form-title::after {
+    font-family: "Playpen Sans", sans-serif; /* Match the title font */
+    font-size: 2.5rem; /* Slightly smaller than the title font */
+    color: #B2B7D9; /* Adjust decorative color */
+}
+
+.form-title::before {
+    content: 'ᡣ𐭩 •｡ꪆৎ ˚⋅'; /* Decorative text before */
+    margin-right: 0.5rem; /* Space between decoration and title */
+}
+
+.form-title::after {
+    content: '⋅˚ꪆৎ｡•ᡣ𐭩'; /* Decorative text after */
+    margin-left: 0.5rem; /* Space between title and decoration */
+}
+
+/* Content container to hold form and map side by side */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 2rem;
+}
+
+/* Form container styling */
+.report-form-container {
+    background-color: #e0e7ff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px;
+    height: 32rem;
+    margin-right: 20px;
+    text-align: left;
+    margin-top: 10rem;
+    margin-left: 1.5rem;
+    margin-bottom: -5rem;
+}
+
+/* Section header styling */
+.section-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #607d8b;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: -0.5rem;
+}
+
+/* Each question container styling */
+.question-container {
+    background-color: #cbd5e1; /* Different color for each question section */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.question-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Input and textarea styling */
+.question-container input[type="text"],
+.question-container textarea,
+.question-container input[type="file"] { 
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    font-family: "Playpen Sans", sans-serif; 
+}
+
+.question-container input[type="file"] {
+    font-size: 0.9rem; /* Smaller text */
+    padding: 5px; /* Reduce padding */
+}
+
+
+/* Textarea specific styling */
+.question-container textarea {
+    resize: vertical;
+    height: 2.5rem;
+}
+
+/* Submit button styling */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #607d8b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: "Playpen Sans";
+}
+
+.submit-button:hover {
+    background-color: #455a64;
+}
+
+/* Map Styling */
+.calpoly-map {
+    width: 450px;
+    height: 543px;
+    border: 6px solid black;
+    margin-left: 20px;
+    margin-top: 10rem;
+}
+
+
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2B7D9; /* Adjust the color as needed */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logo in the navbar */
+.navbar-logo img {
+    height: 3rem; /* Adjust as needed */
+    width: auto;
+}
+
+
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex-grow: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 50px; /* Spacing between links */
+    margin-left: -30px;
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 1.5rem; /* Button font size */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 2.39rem; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 1rem; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+

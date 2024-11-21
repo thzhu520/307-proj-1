@@ -1,0 +1,236 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #B3D6EB; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    font-weight: bold;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #B2B7D9; /* Same as in all pages */
+    padding: 10px 20px; /* Adjust padding for consistency */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+}
+
+
+/* Logo in the navbar */
+.navbar-logo img {
+    height: 3rem; /* Adjust as needed */
+    width: auto;
+    margin-left: -1.25rem;
+}
+
+/* Navigation links container with flex for center alignment */
+.navbar-links {
+    display: flex;
+    flex-grow: 1; /* Allows it to take the remaining space */
+    justify-content: center; /* Centers the links */
+    gap: 50px; /* Spacing between links */
+    margin-left: -50px;
+}
+
+/* Individual navigation links */
+.navbar-links a {
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 1.5rem; /* Button font size */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Static bar icon styling */
+.static-bar {
+    position: center;
+    right: 6rem; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 1rem; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
+}
+
+/* FAQ Title Styling */
+.faq-title {
+    font-family: 'Playpen Sans', sans-serif; /* Matches the playful font style */
+    font-size: 3rem; /* Bold and larger font for emphasis */
+    font-weight: bold;
+    color: #ffffff; /* Black color for text */
+    margin-bottom: 0px;
+    text-align: center; /* Center aligns the title */
+    position: relative; /* For decorative elements */
+    margin-top: 60px; /* Add spacing from the top */
+}
+
+/* Decorative Elements for Title */
+.faq-title::before,
+.faq-title::after {
+    content: ' ˖ ݁𖥔 ݁˖'; /* Decorative stars */
+    font-size: 2.5rem;
+    color: #B2B7D9;
+    position: static;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.faq-title::before {
+    content: '˖ ݁𖥔 ݁˖ '; /* Decorative stars */
+    font-size: 2.5rem;
+    color: #B2B7D9;
+    position: static;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* FAQ Container */
+.faq-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 30px; /* Space between FAQ items */
+    padding: 20px;
+    align-items: center; /* Center items horizontally */
+}
+
+/* Individual FAQ Items */
+.faq-item {
+    background-color: #E5EDF3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 800px; /* Set a max width for the FAQ items */
+    width: 100%; /* Ensure the items take full width up to the max width */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* FAQ Section */
+.faq-section {
+    text-align: center;
+    background-color: #B3D6EB; /* Matches the rest of the design */
+    padding: 50px 20px;
+    position: relative; /* Ensures proper stacking context for z-index */
+    overflow: hidden; /* Prevent extra elements from scrolling */
+    z-index: 0; /* Base layer for the FAQ section */
+}
+
+/* FAQ Header (Question in Cloud) */
+.faq-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #B2CBD9; /* Cloud color */
+    color: #FFF; /* Text color */
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensures the element spans its own line */
+    text-align: center; /* Centers text within the header */
+    margin: 0 auto 20px; /* Centers the header horizontally and adds spacing below */
+    max-width: fit-content; /* Ensures the width fits content dynamically */
+    z-index: 1; /* Ensures the header is above decorations */
+    position: relative; /* Necessary for z-index to work */
+}
+
+
+/* FAQ Body (Answer in Rectangle) */
+.faq-body {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.faq-body ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.faq-body li {
+    margin-bottom: 5px;
+}
+
+/* Moving Decorations */
+.faq-decoration {
+    position: absolute;
+    font-size: 6rem;
+    color: #B2B7D9;
+    opacity: 50; /* Subtle background effect */
+    animation: move-diagonal 20s linear infinite; /* Diagonal animation */
+    z-index: -1; /* Move decorations behind all other elements */
+}
+
+.faq-decoration:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.faq-decoration:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 0s;
+}
+
+.faq-decoration:nth-child(3) {
+    top: 50%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.faq-decoration:nth-child(4) {
+    top: 70%;
+    left: 90%;
+    animation-delay: 0s;
+}
+
+.faq-decoration:nth-child(5) {
+    top: 90%;
+    left: 40%;
+    animation-delay: 0s;
+}
+
+/* Unified Diagonal Animation */
+@keyframes move-diagonal {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
+        opacity: 1;
+    }
+}

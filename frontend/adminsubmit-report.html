@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Report</title>
+    <link rel="stylesheet" href="adminsubmitreport.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <!-- Navbar -->
+     <header class="navbar">
+        <div class="navbar-logo">
+            <a href="issue_admin.html">
+                <img src="icon.png" alt="SLOutions Logo">
+            </a>
+        </div>
+        <nav class="navbar-links">
+            <a href="adminabout.html">About Us</a>
+            <a href="adminall-issues.html">All Issues</a>
+            <a href="adminsubmit-report.html">Submit a Report</a>
+            <a href="adminfaq.html">FAQ</a>
+        </nav>
+        <div class="static-bar">
+            <a href="issuemain_admin.html">
+                <img src="staticbar.png" alt="Home Icon" class="static-bar-icon">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <h1 class="form-title">Report An Issue</h1>
+    <div class="content-container">
+        <!-- Form Section -->
+        <div class="report-form-container">
+            <div class="form-section">
+                <p class="section-header">Give Us More Details</p>
+                <form id="reportForm">
+                    <!-- Title Section -->
+                    <div class="question-container">
+                        <label for="title">Title of the Issue</label>
+                        <input type="text" id="title" name="title" placeholder="Enter a brief title for your issue" required>
+                    </div>
+
+                    <!-- Location Section -->
+                    <div class="question-container">
+                        <label for="location">Location (Building, Room #)</label>
+                        <input type="text" id="location" name="location" placeholder="Location Description" required>
+                    </div>
+
+                    <!-- Description Section -->
+                    <div class="question-container">
+                        <label for="description">Issue Description</label>
+                        <textarea id="description" name="description" placeholder="Describe the issue" required></textarea>
+                    </div>
+
+                    <!-- Image Upload Section -->
+                    <div class="question-container">
+                        <label for="imageUpload">Image Upload (optional)</label>
+                        <input type="file" id="imageUpload" name="imageUpload">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-button">Submit Report</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <iframe class="calpoly-map"
+            src="https://experience.arcgis.com/experience/5d3c7ce97866487eac63664dff9fb946/page/Main-Map-Page/"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div class="clearfix"></div>
+    <script src="adminsubmit-report.js"></script>
+</body>
+
+</html>
