@@ -29,7 +29,7 @@
     <div class="login-container">
         <div class="form-and-image">
             <!-- Login Form -->
-            <form class="login-form">
+            <form class="login-form" onsubmit="redirectToIssueMain(event)">
                 <label for="username" class="login-label">Username:</label>
                 <input type="text" id="username" name="username" class="login-input" placeholder="Enter your username">
                 
@@ -38,6 +38,25 @@
                 
                 <button type="submit" class="btn">Login</button>
             </form>
+
+            <script>
+                function redirectToIssueMain(event) {
+                    event.preventDefault(); // Prevent form submission
+                    
+                    // Get the values of the input fields
+                    const username = document.getElementById("username").value.trim();
+                    const password = document.getElementById("password").value.trim();
+            
+                    // Check if the fields are empty
+                    if (!username || !password) {
+                        alert("Both username and password fields are required."); // Show alert message
+                        return; // Stop further execution
+                    }
+            
+                    // Redirect to the new page if fields are filled
+                    window.location.href = "issuemain_admin.html";
+                }
+            </script>
     
             <!-- Image -->
             <div class="login-image">

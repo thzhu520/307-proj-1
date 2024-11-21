@@ -30,6 +30,7 @@ body {
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+
 /* Navbar styling */
 .navbar {
     position: fixed;
@@ -45,7 +46,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 90px; /* Adjust as needed */
+    height: 4rem; /* Adjust as needed */
     width: auto;
 }
 
@@ -81,11 +82,12 @@ body {
 .form-and-image {
     display: flex;
     flex-direction: row;
-    gap: 100px; /* Larger space between form and image */
+    gap: 150px; /* Larger space between form and image */
     align-items: center; /* Vertically align */
-    justify-content: center; /* Center horizontally */
+    justify-content: space-evenly; /* Center horizontally */
     flex-wrap: wrap; /* Stack vertically on smaller screens */
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 5rem;
 }
 
 
@@ -93,7 +95,7 @@ body {
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between elements */
+    gap: 25px; /* Space between elements */
     width: 400px; /* Adjust width as needed */
 }
 
@@ -152,6 +154,10 @@ body {
 
 /* Adjust Login Image */
 .login-image img {
-    width: 16rem; /* Adjust relative to screen size */
-    height: 15rem; /* Maintain aspect ratio */
+    width: 41rem; /* Increase width to make it larger */
+    height: auto; /* Maintain aspect ratio automatically */
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Center the image block */
+    margin-right: -25rem;
+
 }
