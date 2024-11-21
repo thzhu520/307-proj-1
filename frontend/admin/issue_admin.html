@@ -40,23 +40,43 @@
             </form>
 
             <script>
-                function redirectToIssueMain(event) {
+                async function redirectToIssueMain(event) {
                     event.preventDefault(); // Prevent form submission
-                    
+            
                     // Get the values of the input fields
                     const username = document.getElementById("username").value.trim();
                     const password = document.getElementById("password").value.trim();
             
                     // Check if the fields are empty
                     if (!username || !password) {
-                        alert("Both username and password fields are required."); // Show alert message
-                        return; // Stop further execution
+                        alert("Both username and password fields are required.");
+                        return;
                     }
             
-                    // Redirect to the new page if fields are filled
-                    window.location.href = "issuemain_admin.html";
+                    // Send data to the backend for validation
+                    try {
+                        const response = await fetch('sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ username, password }),
+                        });
+            
+                        const result = await response.json();
+            
+                        if (response.ok) {
+                            alert(result.message); // Login successful
+                            window.location.href = "issuemain_admin.html"; // Redirect
+                        } else {
+                            alert(result.error); // Show error message
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.');
+                    }
                 }
-            </script>
+            </script>            
     
             <!-- Image -->
             <div class="login-image">
