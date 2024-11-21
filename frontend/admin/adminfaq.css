@@ -1,14 +1,26 @@
-/* Navbar styling */
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', sans-serif;
+    background-color: #B3D6EB; /* Tan/Beige background color */
+    color: #333; /* Standard dark text color */
+    font-weight: bold;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    
+}
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
-    padding: 10px 20px;
+    background-color: #B2B7D9; /* Same as in all pages */
+    padding: 10px 20px; /* Adjust padding for consistency */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
 }
 
 
@@ -16,7 +28,7 @@
 .navbar-logo img {
     height: 3rem; /* Adjust as needed */
     width: auto;
-    margin-left: -1.21rem;
+    margin-left: -1.25rem;
 }
 
 /* Navigation links container with flex for center alignment */
@@ -25,7 +37,7 @@
     flex-grow: 1; /* Allows it to take the remaining space */
     justify-content: center; /* Centers the links */
     gap: 50px; /* Spacing between links */
-    margin-left: -30px;
+    margin-left: -50px;
 }
 
 /* Individual navigation links */
@@ -44,27 +56,24 @@
     text-decoration: underline;
 }
 
+
+/* Main content styling (to account for navbar height) */
+.content {
+    padding-top: 0px; /* Adjust based on navbar height */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 /* Static bar icon styling */
 .static-bar {
-    position: absolute;
-    right: 4rem; /* Adjust for spacing from right */
+    position: center;
+    right: 6rem; /* Adjust for spacing from right */
 }
 
 .static-bar-icon {
     height: 1rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
-}
-
-/* General Body Styling */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playpen Sans', sans-serif;
-    background-color: #D9C0B2; /* Tan/Beige background color */
-    color: #333; /* Standard dark text color */
-    font-weight: bold;
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
 }
 
 /* FAQ Title Styling */
@@ -84,7 +93,7 @@ body {
 .faq-title::after {
     content: ' ˖ ݁𖥔 ݁˖'; /* Decorative stars */
     font-size: 2.5rem;
-    color: #D9E4EC;
+    color: #B2B7D9;
     position: static;
     top: 50%;
     transform: translateY(-50%);
@@ -92,7 +101,7 @@ body {
 .faq-title::before {
     content: '˖ ݁𖥔 ݁˖ '; /* Decorative stars */
     font-size: 2.5rem;
-    color: #D9E4EC;
+    color: #B2B7D9;
     position: static;
     top: 50%;
     transform: translateY(-50%);
@@ -129,7 +138,7 @@ body {
 /* FAQ Section */
 .faq-section {
     text-align: center;
-    background-color: #D9C0B2; /* Matches the rest of the design */
+    background-color: #B3D6EB; /* Matches the rest of the design */
     padding: 50px 20px;
     position: relative; /* Ensures proper stacking context for z-index */
     overflow: hidden; /* Prevent extra elements from scrolling */
@@ -175,7 +184,7 @@ body {
 .faq-decoration {
     position: absolute;
     font-size: 6rem;
-    color: #D9E4EC;
+    color: #B2B7D9;
     opacity: 50; /* Subtle background effect */
     animation: move-diagonal 20s linear infinite; /* Diagonal animation */
     z-index: -1; /* Move decorations behind all other elements */

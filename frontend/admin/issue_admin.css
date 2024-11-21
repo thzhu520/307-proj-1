@@ -5,7 +5,7 @@ body {
     max-width: 100%; /* Avoids any overflow */
     max-height: 100%;
     flex-shrink: 0;
-    background-color: #B2B7D9;
+    background-color: #B3D6EB;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@ body {
 
 /* Login Button */
 .btn {
-    background-color: #B2CBD9;
+    background-color: #B2B7D9;
     color: #000;
     font-family: "Playfair Display", serif;
     font-weight: 700;
@@ -30,12 +30,13 @@ body {
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+
 /* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
+    background-color: #B2B7D9; /* Adjust the color as needed */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -45,7 +46,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 90px; /* Adjust as needed */
+    height: 4rem; /* Adjust as needed */
     width: auto;
 }
 
@@ -81,11 +82,12 @@ body {
 .form-and-image {
     display: flex;
     flex-direction: row;
-    gap: 100px; /* Larger space between form and image */
+    gap: 150px; /* Larger space between form and image */
     align-items: center; /* Vertically align */
-    justify-content: center; /* Center horizontally */
+    justify-content: space-evenly; /* Center horizontally */
     flex-wrap: wrap; /* Stack vertically on smaller screens */
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 5rem;
 }
 
 
@@ -93,7 +95,7 @@ body {
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between elements */
+    gap: 25px; /* Space between elements */
     width: 400px; /* Adjust width as needed */
 }
 
@@ -112,7 +114,7 @@ body {
     width: 400px; /* Wider input fields */
     padding: 15px; /* Increase padding for larger appearance */
     font-size: 18px; /* Adjust font size for readability */
-    border: 2px solid #B2CBD9; /* Border color */
+    border: 2px solid #B2B7D9; /* Border color */
     border-radius: 8px; /* Rounded corners */
     font-family: "Playfair Display", serif;
     box-sizing: border-box; /* Ensure padding doesn't affect width */
@@ -130,7 +132,7 @@ body {
 .login-label::after {
     font-family: "Playfair Display", serif; /* Matches the label font */
     font-size: 18px; /* Slightly smaller than the label */
-    color: #FFF; /* Decorative color */
+    color: #000; /* Decorative color */
 }
 
 .login-label::before {
@@ -152,7 +154,10 @@ body {
 
 /* Adjust Login Image */
 .login-image img {
-    max-width: 400px; /* Image scales up to 400px */
-    width: 40%; /* Adjust relative to screen size */
-    height: auto; /* Maintain aspect ratio */
+    width: 41rem; /* Increase width to make it larger */
+    height: auto; /* Maintain aspect ratio automatically */
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Center the image block */
+    margin-right: -25rem;
+
 }
