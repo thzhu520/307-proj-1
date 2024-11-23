@@ -31,7 +31,7 @@ app.use(cors()); // Allow cross-origin requests
 
 // Connect to MongoDB
 mongoose
-    .connect(process.env.MONGODB_URI, { dbName: 'sloutions', useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(process.env.MONGODB_URI, { dbName: 'SLOutions' })
     .then(() => console.log("Connected to MongoDB Atlas"))
     .catch(error => {
         console.error("Error connecting to MongoDB Atlas:", error);
@@ -74,10 +74,21 @@ function authenticateToken(req, res, next) {
     });
 }
 
-// Health check endpoint
-app.get('/health', (req, res) => {
-    res.status(200).send('Healthy');
+app.get('/', (req, res) => {
+    res.send('Backend is running!');
 });
+
+// Health check endpoint
+app.get('/health', async (req, res) => {
+    try {
+        // Attempt a database query
+        await mongoose.connection.db.admin().ping();
+        res.status(200).send('Healthy');
+    } catch (error) {
+        res.status(500).send('Unhealthy: Database connection failed');
+    }
+});
+
 
 // Register new user (Optional)
 app.post('/register', async (req, res) => {
