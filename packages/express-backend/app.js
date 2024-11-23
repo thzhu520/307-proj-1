@@ -31,7 +31,7 @@ app.use(cors()); // Allow cross-origin requests
 
 // Connect to MongoDB
 mongoose
-    .connect(process.env.MONGODB_URI, { dbName: 'SLOutions' })
+    .connect(process.env.MONGODB_URI, { dbName: 'sloutions' })
     .then(() => console.log("Connected to MongoDB Atlas"))
     .catch(error => {
         console.error("Error connecting to MongoDB Atlas:", error);
@@ -142,10 +142,68 @@ app.post('/api/reports', authenticateToken, async (req, res) => {
 });
 
 // Fetch all reports (protected)
+// Fetch all reports with advanced filters
 app.get('/api/reports', authenticateToken, async (req, res) => {
     try {
-        const reports = await Report.find();
-        res.status(200).json(reports);
+        // Extract query parameters
+        const { id, title, description, status, location, startDate, endDate, limit, page } = req.query;
+
+        // Build the MongoDB query object dynamically
+        const query = {};
+
+        if (id) {
+            // Filter by exact ID
+            query._id = id;
+        }
+
+        if (title) {
+            // Partial, case-insensitive match for title
+            query.title = new RegExp(title, 'i');
+        }
+
+        if (description) {
+            // Partial, case-insensitive match for description
+            query.description = new RegExp(description, 'i');
+        }
+
+        if (status) {
+            query.status = status; // Exact match for status
+        }
+
+        if (location) {
+            query.location = new RegExp(location, 'i'); // Case-insensitive partial match
+        }
+
+        if (startDate || endDate) {
+            query.createdDate = {};
+            if (startDate) {
+                query.createdDate.$gte = new Date(startDate); // Greater than or equal to startDate
+            }
+            if (endDate) {
+                query.createdDate.$lte = new Date(endDate); // Less than or equal to endDate
+            }
+        }
+
+        // Pagination: Set default limit and page if not provided
+        const itemsPerPage = parseInt(limit, 10) || 10; // Default limit: 10
+        const currentPage = parseInt(page, 10) || 1; // Default page: 1
+        const skip = (currentPage - 1) * itemsPerPage;
+
+        // Fetch filtered and paginated reports
+        const reports = await Report.find(query)
+            .skip(skip) // Skip documents for pagination
+            .limit(itemsPerPage); // Limit the number of documents
+
+        // Count total documents for pagination metadata
+        const totalReports = await Report.countDocuments(query);
+
+        // Send response
+        res.status(200).json({
+            currentPage,
+            totalPages: Math.ceil(totalReports / itemsPerPage),
+            totalReports,
+            reports,
+        });
     } catch (error) {
         console.error("Error fetching reports:", error);
         res.status(500).json({ error: "Failed to fetch reports" });
