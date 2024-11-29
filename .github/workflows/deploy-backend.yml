@@ -14,20 +14,24 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node.js
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20' # Use Node.js version 20
 
-      # Install dependencies
+      # Install dependencies for the backend
       - name: Install Dependencies
         run: npm install --prefix packages/express-backend
+
+      # Test the backend (optional, can be skipped if not needed)
+      - name: Run Tests
+        run: npm test --prefix packages/express-backend
 
       # Deploy to Azure Web App
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: SLOutions
+          app-name: SLOutions # Name of your Azure Web App
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: packages/express-backend
