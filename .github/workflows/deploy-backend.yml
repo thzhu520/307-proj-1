@@ -13,8 +13,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Match your Node.js version
+
+      - name: Install Dependencies
+        working-directory: packages/express-backend
+        run: npm install
+
+      - name: Build Project (Optional)
+        working-directory: packages/express-backend
+        run: npm run build # Use this if your app needs to be built before deployment
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: SLOutions # Replace with your Web App name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./packages/express-backend # Specify the folder containing your backend
