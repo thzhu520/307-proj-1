@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
@@ -11,23 +8,20 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: npm install, and build
-      run: |
-              npm install --workspaces=false
-              npm run -w express-backend build --if-present
-              npm run -w express-backend test --if-present
-      working-directory: packages/express-backend
+      # Checkout the code
+      - uses: actions/checkout@v4
 
-    - name: Zip artifact for deployment
-      run: zip release.zip ./* -r
-      working-directory: packages/express-backend
+      # Install, build, and test
+      - name: Install, Build, and Test Backend
+        run: |
+          npm install --workspaces=false
+          npm run -w express-backend build --if-present
+          npm run -w express-backend test --if-present
+        working-directory: packages/express-backend
