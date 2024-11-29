@@ -129,10 +129,10 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Submit a report (protected)
-app.post('/api/reports', authenticateToken, async (req, res) => {
+// Allow anyone to submit a report
+app.post('/api/reports', async (req, res) => {
     try {
-        const report = new Report(req.body);
+        const report = new Report(req.body); // Save the report from request body
         await report.save();
         res.status(201).json({ message: "Report submitted successfully!" });
     } catch (error) {
@@ -140,6 +140,7 @@ app.post('/api/reports', authenticateToken, async (req, res) => {
         res.status(500).json({ error: "Failed to submit report" });
     }
 });
+
 
 // Fetch all reports (protected)
 // Fetch all reports with advanced filters
