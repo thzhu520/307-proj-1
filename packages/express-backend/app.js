@@ -21,6 +21,11 @@ if (!process.env.MONGODB_URI || !process.env.TOKEN_SECRET) {
     process.exit(1); // Exit if required env variables are missing
 }
 
+
+console.log("MONGODB_URI:", process.env.MONGODB_URI);
+console.log("TOKEN_SECRET:", process.env.TOKEN_SECRET);
+
+
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 8080;
