@@ -5,6 +5,7 @@
         "test": "npx jest",
         "dev": "nodemon app.js",
         "start": "node packages/express-backend/app.js",
+        "start-backend": "npm install --prefix packages/express-backend && npm start --prefix packages/express-backend",
         "build": "react-scripts build",
         "eject": "react-scripts eject",
         "check-dependencies": "npm ls"
