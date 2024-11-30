@@ -18,10 +18,20 @@ jobs:
       # Checkout the code
       - uses: actions/checkout@v4
 
-      # Install, build, and test
-      - name: Install, Build, and Test Backend
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Install dependencies in the express-backend directory
+      - name: Install Backend Dependencies
+        run: npm install
+        working-directory: packages/express-backend
+
+      # Build and test the backend
+      - name: Build and Test Backend
         run: |
-          npm install --workspaces=false
-          npm run -w express-backend build --if-present
-          npm run -w express-backend test --if-present
+          npm run build --if-present
+          npm run test --if-present
         working-directory: packages/express-backend
