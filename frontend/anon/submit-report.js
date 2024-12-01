@@ -10,7 +10,6 @@ document.getElementById("reportForm").addEventListener("submit", async function(
     };
 
     try {
-        // Send the report data to the backend (Azure)
         const response = await fetch("https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports", {
             method: "POST",
             headers: {
@@ -18,13 +17,20 @@ document.getElementById("reportForm").addEventListener("submit", async function(
             },
             body: JSON.stringify(report),
         });
-        
-        
-
+    
         if (response.ok) {
-            alert("Report submitted successfully!");
-            document.getElementById("reportForm").reset();
-            window.location.href = "index.html"; // Redirect to home or another page
+            const responseData = await response.json(); // Parse the response
+            console.log("Response Data:", responseData); // Log the response for debugging
+    
+            const incidentReportNumber = responseData._id; // Extract the MongoDB ID
+            if (!incidentReportNumber) {
+                console.error("No _id found in response:", responseData);
+                alert("Unexpected server response. Please try again.");
+                return;
+            }
+    
+            // Redirect to the success page
+            window.location.href = `submit-report-success.html?reportNumber=${incidentReportNumber}`;
         } else {
             alert("Failed to submit the report.");
         }
@@ -32,4 +38,5 @@ document.getElementById("reportForm").addEventListener("submit", async function(
         console.error("Error:", error);
         alert("An error occurred while submitting the report.");
     }
+    
 });

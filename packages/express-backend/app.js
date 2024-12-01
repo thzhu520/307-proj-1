@@ -135,14 +135,14 @@ app.post('/login', async (req, res) => {
 });
 
 // Allow anyone to submit a report
-app.post('/api/reports', async (req, res) => {
+app.post("/api/reports", async (req, res) => {
     try {
-        const report = new Report(req.body); // Save the report from request body
-        await report.save();
-        res.status(201).json({ message: "Report submitted successfully!" });
+        const report = new Report(req.body); // Create a new report object
+        const savedReport = await report.save(); // Save to MongoDB
+        res.status(201).json(savedReport); // Send the full saved report back to the frontend
     } catch (error) {
-        console.error("Error submitting report:", error);
-        res.status(500).json({ error: "Failed to submit report" });
+        console.error("Error saving report:", error);
+        res.status(500).json({ message: "Failed to save report" });
     }
 });
 

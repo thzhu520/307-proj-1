@@ -1,0 +1,67 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #D9C0B2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Playpen Sans", sans-serif; /* Ensure font consistency */
+}
+
+/* Navigation Bar Offset */
+.content-container {
+    margin-top: 8rem; /* Push content below navbar */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Space between elements */
+}
+
+/* Title Styling */
+.content-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+/* Highlighted Text (Incident Report Number) */
+.highlight {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #B2CBD9;
+    background-color: #FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: -1rem;
+}
+
+/* Button Styling */
+.submit-button {
+    background-color: #B2CBD9;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px; /* Set a maximum width */
+    width: auto; /* Automatically adjust to the content */
+    text-align: center; /* Ensure text is centered */
+    margin: 0 auto; /* Center the button horizontally */
+    display: block; /* Ensures proper alignment */
+}
+
+.submit-button:hover {
+    background-color: #90B0C0;
+}

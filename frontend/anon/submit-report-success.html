@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Submitted</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="submit-report.css">
+    <link rel="stylesheet" href="issues.css">
+    <link rel="stylesheet" href="submit-report-success.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <a href="../index.html">
+                <img src="icon.png" alt="SLOutions Logo">
+            </a>
+        </div>
+        <nav class="navbar-links">
+            <a href="about.html">About Us</a>
+            <a href="existing-issues.html">Existing Issues</a>
+            <a href="submit-report.html">Submit a Report</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="static-bar">
+            <a href="../index.html">
+                <img src="staticbar.png" alt="Home Icon" class="static-bar-icon">
+            </a>
+        </div>
+    </header>
+
+    <!-- Success Message -->
+    <div class="content-container">
+        <h1>Issue Submitted Successfully!</h1>
+        <p>Your incident report number is:</p>
+        <p id="incidentReportNumber" class="highlight"></p>
+        <button onclick="window.location.href='submit-report.html'" class="submit-button">Main Menu</button>
+    </div>
+
+    <script>
+        // Extract the incident report number from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const reportNumber = urlParams.get("reportNumber");
+
+        // Display the incident report number
+        document.getElementById("incidentReportNumber").textContent = reportNumber || "N/A";
+    </script>
+</body>
+</html>
