@@ -10,8 +10,8 @@
 </head>
 
 <body>
-     <!-- Navbar -->
-     <header class="navbar">
+    <!-- Navbar -->
+    <header class="navbar">
         <div class="navbar-logo">
             <a href="issue_admin.html">
                 <img src="../icon.png" alt="SLOutions Logo">
@@ -31,12 +31,64 @@
     </header>
 
     <!-- Main Content -->
-    <h1 class="form-title">All Issues</h1>
-    <div class="content-container">
-        
+    <div class="main-content">
+        <h1 class="form-title">All Issues</h1>
+        <div class="content-container">
+            <!-- Dynamically loaded content will appear here -->
+        </div>
     </div>
 
-    
-</body>
+        <script>
+        async function fetchReports() {
+    try {
+        // Retrieve the token from local storage
+        const token = localStorage.getItem('token'); // Ensure the key is correct
 
-</html>
+        if (!token) {
+            console.error('No token found in local storage');
+            return;
+        }
+
+        // Make the request with the token
+        const response = await fetch('https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports', {
+            headers: {
+                'Authorization': `Bearer ${token}`, // Correctly include the token
+                'Content-Type': 'application/json', // Proper header for JSON
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch reports: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // Display reports in the frontend
+        const contentContainer = document.querySelector('.content-container');
+        contentContainer.innerHTML = ''; // Clear existing content
+
+        data.reports.forEach(report => {
+            const reportCard = document.createElement('div');
+            reportCard.classList.add('issue-card');
+            reportCard.innerHTML = `
+                <p><strong>Title:</strong> ${report.title}</p>
+                <p><strong>Location:</strong> ${report.location}</p>
+                <p><strong>Description:</strong> ${report.description}</p>
+                <p><strong>Date:</strong> ${new Date(report.createdDate).toLocaleString()}</p>
+                <p><strong>Status:</strong> ${report.status}</p>
+            `;
+            contentContainer.appendChild(reportCard);
+        });
+    } catch (error) {
+        console.error('Error fetching reports:', error);
+        const contentContainer = document.querySelector('.content-container');
+        contentContainer.innerHTML = '<p>Error loading reports. Please try again later.</p>';
+    }
+}
+
+
+            </script>
+            
+    </body>
+
+    </html>
