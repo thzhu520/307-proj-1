@@ -10,6 +10,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: "Playpen Sans", sans-serif; /* Ensure font consistency */
+    overflow: hidden; /* Prevent scrolling caused by animations */
+    position: relative; /* Allow absolutely positioned elements */
 }
 
 /* Navigation Bar Offset */
@@ -28,9 +30,26 @@ body {
 .content-container h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #000;
+    color: #FFF;
     margin-bottom: 1rem;
 }
+
+/* Before and After Decorative Elements for 'Issue' */
+.content-container h1::before {
+    content: '⋆｡ﾟ☁︎'; /* Decorative element before */
+    font-size: 2rem;
+    color: #D9E4EC;
+    margin-right: 0.5rem; /* Space between decoration and text */
+}
+
+.content-container h1::after {
+    content: '☁︎ ﾟ｡⋆'; /* Decorative element after */
+    font-size: 2rem;
+    color: #D9E4EC;
+    margin-left: 0.5rem; /* Space between decoration and text */
+}
+
+
 
 /* Highlighted Text (Incident Report Number) */
 .highlight {
@@ -44,6 +63,11 @@ body {
     margin-top: -1rem;
 }
 
+.content-container p:first-of-type {
+    color: #FFF; /* Change text color to white */
+}
+
+
 /* Button Styling */
 .submit-button {
     background-color: #B2CBD9;
@@ -54,8 +78,7 @@ body {
     padding: 1rem 2rem;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 200px; /* Set a maximum width */
+    max-width: 400px; /* Set a maximum width */
     width: auto; /* Automatically adjust to the content */
     text-align: center; /* Ensure text is centered */
     margin: 0 auto; /* Center the button horizontally */
@@ -63,5 +86,79 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #90B0C0;
+    text-decoration: underline;
+    background-color: #B2CBD9;
+
+}
+
+/* Decorative Elements for "Main Menu" Button */
+.submit-button::before {
+    content: '・*̩̩͙ ✦ ʚ'; /* Add a star or decorative element before */
+    font-size: 1.5rem;
+    color: #FFF;
+    margin-right: 0.5rem; /* Space between decoration and text */
+}
+
+.submit-button::after {
+    content: 'ɞ ✦ *̩̩͙・'; /* Add another decorative element after */
+    font-size: 1.5rem;
+    color: #FFF;
+    margin-left: 0.5rem; /* Space between text and decoration */
+}
+
+/* Moving Clouds */
+.cloud {
+    position: absolute;
+    font-size: 5rem;
+    color: #D9E4EC;
+    opacity: 0.7;
+    animation: move-down 10s linear infinite; /* Diagonal animation */
+}
+
+/* Moving Stars */
+.star {
+    position: absolute;
+    font-size: 2rem;
+    color: #D9E4EC;
+    opacity: 0.7;
+    animation: move-down 11s linear infinite; /* Diagonal animation */
+}
+
+/* Randomize Initial Positions */
+.cloud:nth-child(1), .star:nth-child(1) {
+    top: -10%; /* Start above the viewport */
+    left: 10%; /* Randomize starting horizontal position */
+    animation-delay: 0s;
+}
+.cloud:nth-child(2), .star:nth-child(2) {
+    top: -20%;
+    left: 30%;
+    animation-delay: 2s;
+}
+.cloud:nth-child(3), .star:nth-child(3) {
+    top: -30%;
+    left: 50%;
+    animation-delay: 4s;
+}
+.cloud:nth-child(4), .star:nth-child(4) {
+    top: -40%;
+    left: 70%;
+    animation-delay: 6s;
+}
+.cloud:nth-child(5), .star:nth-child(5) {
+    top: -50%;
+    left: 90%;
+    animation-delay: 8s;
+}
+
+/* Unified Straight Down Animation */
+@keyframes move-down {
+    0% {
+        transform: translateY(0); /* Start at initial position */
+        opacity: 1; /* Fully visible at the start */
+    }
+    100% {
+        transform: translateY(110vh); /* Move beyond the viewport height */
+        opacity: 0.7; /* Slightly fade out */
+    }
 }
