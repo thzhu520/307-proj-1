@@ -111,6 +111,18 @@ app.post('/register', async (req, res) => {
     }
 });
 
+// GET /login
+app.get('/login', authenticateToken, async (req, res) => {
+    try {
+        // Fetch all users
+        const users = await User.find({}); 
+        res.status(200).json(users); // Return the user list
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ error: "Failed to fetch users" });
+    }
+});
+
 // Login user
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
