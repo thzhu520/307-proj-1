@@ -66,15 +66,18 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1];
 
     if (!token) {
-        return res.status(401).json({ error: "Unauthorized" });
+        return res.status(401).json({ success: false, error: "Unauthorized: Token missing" });
     }
 
     jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
         if (err) {
-            return res.status(403).json({ error: "Forbidden" });
+            if (err.name === 'TokenExpiredError') {
+                return res.status(401).json({ success: false, error: "Token expired" });
+            }
+            return res.status(403).json({ success: false, error: "Forbidden: Invalid token" });
         }
 
-        req.user = user; // Attach user info to request
+        req.user = user;
         next();
     });
 }
@@ -130,12 +133,18 @@ app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ username });
         if (!user) {
-            return res.status(401).json({ error: "Invalid username or password" });
+            return res.status(401).json({
+                success: false,
+                error: "Invalid username or password",
+            });
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(401).json({ error: "Invalid username or password" });
+            return res.status(401).json({
+                success: false,
+                error: "Invalid username or password",
+            });
         }
 
         const token = jwt.sign({ id: user._id, username: user.username }, process.env.TOKEN_SECRET, { expiresIn: "1h" });
