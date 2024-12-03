@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Submitted</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="adminsubmitreport.css">
+    <link rel="stylesheet" href="issuemain_admin.css">
+    <link rel="stylesheet" href="adminsubmitreportsuccess.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <a href="issue_admin.html">
+                <img src="icon.png" alt="SLOutions Logo">
+            </a>
+        </div>
+        <nav class="navbar-links">
+            <a href="adminabout.html">About Us</a>
+            <a href="adminall-issues.html">All Issues</a>
+            <a href="adminsubmit-report.html">Submit a Report</a>
+            <a href="adminfaq.html">FAQ</a>
+        </nav>
+        <div class="static-bar">
+            <a href="issuemain_admin.html">
+                <img src="../staticbar.png" alt="Home Icon" class="static-bar-icon">
+            </a>
+        </div>
+    </header>
+
+    <!-- Success Message -->
+    <div class="content-container">
+        <span class="cloud large">✧</span>
+        <span class="star small">♬</span>
+        <span class="cloud">✩</span>
+        <span class="star">★</span>
+        <span class="cloud small">☁</span>
+        <span class="star large">☾</span>
+        <span class="cloud">⁺</span>
+
+        <h1>Issue Submitted Successfully!</h1>
+        <p>Your incident report number is:</p>
+        <p id="incidentReportNumber" class="highlight"></p>
+        <button onclick="window.location.href='issuemain_admin.html'" class="submit-button">Main Menu</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const reportNumber = urlParams.get('reportNumber'); // Retrieve the reportNumber from the query string
+    
+        document.getElementById('incidentReportNumber').textContent = reportNumber || 'N/A';
+    </script>
+    
+</body>
+</html>
