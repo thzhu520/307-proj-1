@@ -16,17 +16,15 @@
         <span class="star small left">‧₊˚</span>
         <span class="star medium left">𓏲</span>
         <span class="star large left">⋅♡</span>
-       
 
         <!-- Stars originating from the right -->
         <span class="star small right">‧₊˚</span>
         <span class="star medium right">𓏲</span>
         <span class="star large right">⋅♡</span>
-
     </div>
 
     <!-- Navbar -->
-    <header class="navbar ">
+    <header class="navbar">
         <div class="navbar-logo">
             <a href="../index.html">
                 <img src="icon.png" alt="SLOutions Logo">
@@ -44,6 +42,7 @@
             </a>
         </div>
     </header>
+
     <!-- Content Wrapper -->
     <main>
         <div class="content-wrapper">
@@ -58,7 +57,7 @@
                 <!-- Form Section -->
                 <div class="form-container">
                     <input id="report-number" type="text" placeholder="Incident Report Number">
-                    <button onclick="checkStatus()">Submit</button>
+                    <button id="check-status-button">Submit</button>
                 </div>
 
                 <!-- Icon Section -->
@@ -92,88 +91,12 @@
             <!-- Call-to-Action -->
             <div class="cta">
                 <a href="submit-report.html" class="cta-button">➤ Submit a New Report</a>
-            </div>            
+            </div>
         </div>
     </main>
 
-    <!-- JavaScript for Status Logic -->
-    <script>
-        function checkStatus() {
-    const reportNumber = document.getElementById('report-number').value;
-
-    // Reset all icons to inactive state (grey color)
-    const icons = document.querySelectorAll('.icon');
-    icons.forEach(icon => {
-        icon.classList.remove('active');
-        icon.style.filter = 'grayscale(100%)'; // Make inactive icons grey
-    });
-
-    // Reset description box
-    const descriptionBox = document.getElementById('status-description');
-    descriptionBox.innerHTML = "";
-
-    // Reset sand animation visibility
-    const sandContainer = document.getElementById('sand-pour-container');
-    sandContainer.style.display = 'none';
-
-    // Trigger animations based on report number
-    if (reportNumber === "123") {
-        const reportingIcon = document.getElementById('reporting').querySelector('.icon');
-        reportingIcon.classList.add('active');
-        reportingIcon.style.filter = 'grayscale(0%)'; // Make active icon colored
-        descriptionBox.innerHTML = "<p>Your report has been received and is awaiting further action.</p>";
-    } else if (reportNumber === "456") {
-        const checkingIcon = document.getElementById('checking').querySelector('.icon');
-        checkingIcon.classList.add('active');
-        checkingIcon.style.filter = 'grayscale(0%)'; // Make active icon colored
-        descriptionBox.innerHTML = "<p>We are currently verifying your report. Please check back later.</p>";
-    } else if (reportNumber === "789") {
-        const resolvingIcon = document.getElementById('resolving').querySelector('.icon');
-        resolvingIcon.classList.add('active');
-        resolvingIcon.style.filter = 'grayscale(0%)'; // Make active icon colored
-        descriptionBox.innerHTML = `
-            <p><strong>Location:</strong> Building A, Floor 2, Room 210</p>
-            <p><strong>Issue:</strong> Broken light fixture</p>
-        `;
-        launchConfettiInContainer(); // Use confetti effect for "Resolving"
-    } else {
-        alert("Invalid Report Number");
-    }
-}
-
-        function launchConfettiInContainer() {
-    const descriptionBox = document.querySelector(".description-box");
-    
-    // Create a canvas for confetti
-    const canvas = document.createElement("canvas");
-    canvas.style.position = "absolute";
-    canvas.style.top = 0;
-    canvas.style.left = 0;
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    descriptionBox.style.position = "relative"; // Ensure description-box is positioned relative
-    descriptionBox.appendChild(canvas);
-
-    const confetti = window.confetti.create(canvas, {
-        resize: true,
-        useWorker: true,
-    });
-
-    // Launch confetti
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.5 }, // Centered vertically in the container
-    });
-
-    // Remove canvas after the animation
-    setTimeout(() => {
-        descriptionBox.removeChild(canvas);
-    }, 3000); // Adjust duration as needed
-}
-
-    </script>
+    <!-- External JavaScript -->
+    <script src="existing-issues.js"></script>
 </body>
 
 </html>
