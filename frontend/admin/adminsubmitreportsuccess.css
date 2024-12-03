@@ -24,6 +24,19 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2rem; /* Space between elements */
+    
+}
+
+/* Static bar icon styling */
+.static-bar {
+    position: absolute;
+    right: 2.39rem; /* Adjust for spacing from right */
+}
+
+.static-bar-icon {
+    height: 2rem; /* Adjust icon size */
+    width: auto;
+    cursor: pointer;
 }
 
 /* Title Styling */
