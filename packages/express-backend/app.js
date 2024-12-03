@@ -171,6 +171,22 @@ app.post("/api/reports", async (req, res) => {
     }
 });
 
+// Fetch a single report by ID
+app.get('/api/reports/:id', async (req, res) => {
+    const { id } = req.params; // Extract the ID from the URL
+    try {
+        const report = await Report.findById(id); // Query the database for the report
+        if (!report) {
+            return res.status(404).json({ message: 'Report not found' }); // Return 404 if not found
+        }
+        res.status(200).json(report); // Return the report if found
+    } catch (error) {
+        console.error("Error fetching report by ID:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
+
+
 
 // Fetch all reports (protected)
 // Fetch all reports with advanced filters
