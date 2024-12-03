@@ -86,6 +86,21 @@
                 <p><strong>Description:</strong> ${report.description}</p>
                 <p><strong>Date:</strong> ${new Date(report.createdDate).toLocaleString()}</p>
                 <p><strong>Status:</strong> ${report.status}</p>
+
+                <p><strong>Current Status:</strong> <span class="current-status">${report.status}</span></p>
+                <label for="status-select-${report._id}"><strong>Update Status:</strong></label>
+                <select id="status-select-${report._id}" class="status-select">
+                    <option value="Unresolved" ${
+                        report.status === "Unresolved" ? "selected" : ""
+                    }>Unresolved</option>
+                    <option value="Pending" ${
+                        report.status === "Pending" ? "selected" : ""
+                    }>Pending</option>
+                    <option value="Resolved" ${
+                        report.status === "Resolved" ? "selected" : ""
+                    }>Resolved</option>
+                </select>
+                <button class="update-status-button" data-id="${report._id}">Update Status</button>
             `;
             contentContainer.appendChild(reportCard);
         });
