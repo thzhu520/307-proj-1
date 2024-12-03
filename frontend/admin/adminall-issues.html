@@ -39,35 +39,45 @@
     </div>
 
         <script>
-        async function fetchReports() {
+      async function fetchReports() {
     try {
-        // Retrieve the token from local storage
-        const token = localStorage.getItem('token'); // Ensure the key is correct
+        const token = localStorage.getItem('token'); // Ensure token retrieval
+        console.log('Token in localStorage:', token);
 
         if (!token) {
-            console.error('No token found in local storage');
+            alert('You must log in first.');
             return;
         }
 
-        // Make the request with the token
+        // Make the API request
         const response = await fetch('https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports', {
             headers: {
-                'Authorization': `Bearer ${token}`, // Correctly include the token
-                'Content-Type': 'application/json', // Proper header for JSON
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
             },
         });
 
         if (!response.ok) {
-            throw new Error(`Failed to fetch reports: ${response.status} ${response.statusText}`);
+            throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
+        console.log('API Response:', data); // Debug the response
 
-        // Display reports in the frontend
+        // Check if reports exist in the response
+        const reports = data.reports || [];
         const contentContainer = document.querySelector('.content-container');
-        contentContainer.innerHTML = ''; // Clear existing content
 
-        data.reports.forEach(report => {
+        // Clear the container
+        contentContainer.innerHTML = '';
+
+        // Populate the container with report data
+        if (reports.length === 0) {
+            contentContainer.innerHTML = '<p>No reports found.</p>';
+            return;
+        }
+
+        reports.forEach(report => {
             const reportCard = document.createElement('div');
             reportCard.classList.add('issue-card');
             reportCard.innerHTML = `
@@ -81,11 +91,12 @@
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
-        const contentContainer = document.querySelector('.content-container');
-        contentContainer.innerHTML = '<p>Error loading reports. Please try again later.</p>';
+        document.querySelector('.content-container').innerHTML = `<p>Error loading reports: ${error.message}</p>`;
     }
 }
 
+// Run the function when the DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', fetchReports);
 
             </script>
             

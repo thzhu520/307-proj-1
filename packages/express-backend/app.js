@@ -65,15 +65,16 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
+    console.log('Authorization Header:', authHeader); // Debug
+    console.log('Extracted Token:', token); // Debug
+
     if (!token) {
         return res.status(401).json({ success: false, error: "Unauthorized: Token missing" });
     }
 
     jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
         if (err) {
-            if (err.name === 'TokenExpiredError') {
-                return res.status(401).json({ success: false, error: "Token expired" });
-            }
+            console.error('JWT Error:', err); // Debug
             return res.status(403).json({ success: false, error: "Forbidden: Invalid token" });
         }
 
@@ -81,6 +82,9 @@ function authenticateToken(req, res, next) {
         next();
     });
 }
+
+
+
 
 app.get('/', (req, res) => {
     res.send('Backend is running!');
