@@ -33,6 +33,20 @@
     <!-- Main Content -->
     <div class="main-content">
         <h1 class="form-title">All Issues</h1>
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <input type="text" id="location" placeholder="Enter location" />
+            <select id="status">
+                <option value="">Select status</option>
+                <option value="Unresolved">Unresolved</option>
+                <option value="Pending">Pending</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+            <input type="date" id="start-date" placeholder="Start Date" />
+            <input type="date" id="end-date" placeholder="End Date" />
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
         <div class="content-container">
             <!-- Dynamically loaded content will appear here -->
         </div>
