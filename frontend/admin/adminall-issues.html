@@ -108,7 +108,7 @@
                     button.addEventListener('click', async (e) => {
                         const reportId = e.target.dataset.id;
                         const selectElement = document.getElementById(`status-select-${reportId}`);
-                        const newStatus = selectElement.value;
+                        const newStatus = selectElement.value.toLowerCase();
     
                         // Call the update status function
                         await updateReportStatus(reportId, newStatus, token);
