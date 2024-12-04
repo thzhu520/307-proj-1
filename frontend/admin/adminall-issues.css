@@ -171,7 +171,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%; /* Full width for centering */
-    margin-top: 5rem; /* Spacing below title */
+    margin-top: 1.5rem; /* Spacing below title */
     padding: 1rem;
     background-color: #d0d4f3;
     border-radius: 10px;
@@ -181,7 +181,7 @@ body {
 /* Individual issue cards styling */
 .issue-card {
     width: 90%; /* Adjust to make each card smaller and centered */
-    max-width: 600px; /* Limit the card width */
+    max-width: 1000px; /* Limit the card width */
     padding: 1.5rem;
     margin: 1rem auto; /* Center the card horizontally */
     border: 2px solid #B2B7D9; /* Matches navbar */
