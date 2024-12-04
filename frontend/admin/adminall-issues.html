@@ -38,83 +38,120 @@
         </div>
     </div>
 
-        <script>
-      async function fetchReports() {
-    try {
-        const token = localStorage.getItem('token'); // Ensure token retrieval
-        console.log('Token in localStorage:', token);
-
-        if (!token) {
-            alert('You must log in first.');
-            return;
+    <script>
+        async function fetchReports() {
+            try {
+                const token = localStorage.getItem('token'); // Ensure token retrieval
+                console.log('Token in localStorage:', token);
+    
+                if (!token) {
+                    alert('You must log in first.');
+                    return;
+                }
+    
+                // Make the API request
+                const response = await fetch('https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports?limit=100000', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+    
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+                }
+    
+                const data = await response.json();
+                console.log('API Response:', data); // Debug the response
+    
+                // Check if reports exist in the response
+                const reports = data.reports || [];
+                const contentContainer = document.querySelector('.content-container');
+    
+                // Clear the container
+                contentContainer.innerHTML = '';
+    
+                // Populate the container with report data
+                if (reports.length === 0) {
+                    contentContainer.innerHTML = '<p>No reports found.</p>';
+                    return;
+                }
+    
+                reports.forEach(report => {
+                    const reportCard = document.createElement('div');
+                    reportCard.classList.add('issue-card');
+                    reportCard.innerHTML = `
+                        <p><strong>Title:</strong> ${report.title}</p>
+                        <p><strong>Location:</strong> ${report.location}</p>
+                        <p><strong>Description:</strong> ${report.description}</p>
+                        <p><strong>Date:</strong> ${new Date(report.createdDate).toLocaleString()}</p>
+                        <p><strong>Status:</strong> <span class="current-status">${report.status}</span></p>
+                        <label for="status-select-${report._id}"><strong>Update Status:</strong></label>
+                        <select id="status-select-${report._id}" class="status-select">
+                            <option value="Unresolved" ${
+                                report.status === "Unresolved" ? "selected" : ""
+                            }>Unresolved</option>
+                            <option value="Pending" ${
+                                report.status === "Pending" ? "selected" : ""
+                            }>Pending</option>
+                            <option value="Resolved" ${
+                                report.status === "Resolved" ? "selected" : ""
+                            }>Resolved</option>
+                        </select>
+                        <button class="update-status-button" data-id="${report._id}">Update Status</button>
+                    `;
+                    contentContainer.appendChild(reportCard);
+                });
+    
+                // Add event listeners for all update buttons
+                document.querySelectorAll('.update-status-button').forEach(button => {
+                    button.addEventListener('click', async (e) => {
+                        const reportId = e.target.dataset.id;
+                        const selectElement = document.getElementById(`status-select-${reportId}`);
+                        const newStatus = selectElement.value;
+    
+                        // Call the update status function
+                        await updateReportStatus(reportId, newStatus, token);
+                    });
+                });
+            } catch (error) {
+                console.error('Error fetching reports:', error);
+                document.querySelector('.content-container').innerHTML = `<p>Error loading reports: ${error.message}</p>`;
+            }
         }
-
-        // Make the API request
-        const response = await fetch('https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports?limit=100000', {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+    
+        async function updateReportStatus(reportId, newStatus, token) {
+            try {
+                const response = await fetch(`https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports/${reportId}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ status: newStatus }),
+                });
+    
+                if (!response.ok) {
+                    throw new Error(`Failed to update status: ${response.status} ${response.statusText}`);
+                }
+    
+                const updatedReport = await response.json();
+                console.log('Updated Report:', updatedReport);
+    
+                // Update the UI
+                const currentStatusElement = document.querySelector(`#status-select-${reportId}`).closest('.issue-card').querySelector('.current-status');
+                currentStatusElement.textContent = updatedReport.status;
+                alert('Status updated successfully!');
+            } catch (error) {
+                console.error('Error updating status:', error);
+                alert(`Failed to update status: ${error.message}`);
+            }
         }
-
-        const data = await response.json();
-        console.log('API Response:', data); // Debug the response
-
-        // Check if reports exist in the response
-        const reports = data.reports || [];
-        const contentContainer = document.querySelector('.content-container');
-
-        // Clear the container
-        contentContainer.innerHTML = '';
-
-        // Populate the container with report data
-        if (reports.length === 0) {
-            contentContainer.innerHTML = '<p>No reports found.</p>';
-            return;
-        }
-
-        reports.forEach(report => {
-            const reportCard = document.createElement('div');
-            reportCard.classList.add('issue-card');
-            reportCard.innerHTML = `
-                <p><strong>Title:</strong> ${report.title}</p>
-                <p><strong>Location:</strong> ${report.location}</p>
-                <p><strong>Description:</strong> ${report.description}</p>
-                <p><strong>Date:</strong> ${new Date(report.createdDate).toLocaleString()}</p>
-                <p><strong>Status:</strong> ${report.status}</p>
-
-                <p><strong>Current Status:</strong> <span class="current-status">${report.status}</span></p>
-                <label for="status-select-${report._id}"><strong>Update Status:</strong></label>
-                <select id="status-select-${report._id}" class="status-select">
-                    <option value="Unresolved" ${
-                        report.status === "Unresolved" ? "selected" : ""
-                    }>Unresolved</option>
-                    <option value="Pending" ${
-                        report.status === "Pending" ? "selected" : ""
-                    }>Pending</option>
-                    <option value="Resolved" ${
-                        report.status === "Resolved" ? "selected" : ""
-                    }>Resolved</option>
-                </select>
-                <button class="update-status-button" data-id="${report._id}">Update Status</button>
-            `;
-            contentContainer.appendChild(reportCard);
-        });
-    } catch (error) {
-        console.error('Error fetching reports:', error);
-        document.querySelector('.content-container').innerHTML = `<p>Error loading reports: ${error.message}</p>`;
-    }
-}
-
-// Run the function when the DOM content is fully loaded
-document.addEventListener('DOMContentLoaded', fetchReports);
-
-
-            </script>
+    
+        // Run the function when the DOM content is fully loaded
+        document.addEventListener('DOMContentLoaded', fetchReports);
+    </script>
+    
             
     </body>
 
