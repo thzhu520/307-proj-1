@@ -1,8 +1,12 @@
+document.addEventListener("DOMContentLoaded", setupFormListener);
+
 function setupFormListener() {
+    console.log("Form listener setup initialized.");
     const form = document.getElementById("reportForm");
     if (form) {
         form.addEventListener("submit", async function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default form submission behavior
+            console.log("Form submission intercepted.");
 
             const report = {
                 title: document.getElementById("title").value,
@@ -11,6 +15,8 @@ function setupFormListener() {
                 createdDate: new Date().toISOString(),
                 status: "unresolved",
             };
+
+            console.log("Report data:", report);
 
             try {
                 const response = await fetch(
@@ -26,6 +32,7 @@ function setupFormListener() {
 
                 if (response.ok) {
                     const responseData = await response.json();
+                    console.log("Server response:", responseData);
                     const incidentReportNumber = responseData._id;
 
                     if (!incidentReportNumber) {
@@ -40,6 +47,7 @@ function setupFormListener() {
                     // Redirect to the success page
                     window.location.href = `submit-report-success.html?reportNumber=${incidentReportNumber}`;
                 } else {
+                    console.error("Server error:", response.status);
                     alert("Failed to submit the report.");
                 }
             } catch (error) {
@@ -47,8 +55,11 @@ function setupFormListener() {
                 alert("An error occurred while submitting the report.");
             }
         });
+    } else {
+        console.error("Form with ID 'reportForm' not found.");
     }
 }
 
-// Export the function for testing
-module.exports = { setupFormListener };
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { setupFormListener };
+}
