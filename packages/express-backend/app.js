@@ -186,6 +186,35 @@ app.get('/api/reports/:id', async (req, res) => {
     }
 });
 
+// Update a report's status
+app.patch('/api/reports/:id', authenticateToken, async (req, res) => {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    // Validate status
+    const validStatuses = ['unresolved', 'pending', 'resolved'];
+    if (!validStatuses.includes(status)) {
+        return res.status(400).json({ error: "Invalid status value" });
+    }
+
+    try {
+        // Find the report by ID and update its status
+        const updatedReport = await Report.findByIdAndUpdate(
+            id,
+            { status },
+            { new: true } // Return the updated document
+        );
+
+        if (!updatedReport) {
+            return res.status(404).json({ error: "Report not found" });
+        }
+
+        res.status(200).json(updatedReport);
+    } catch (error) {
+        console.error("Error updating report status:", error);
+        res.status(500).json({ error: "Failed to update report status" });
+    }
+});
 
 
 // Fetch all reports (protected)

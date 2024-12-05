@@ -140,7 +140,7 @@ body {
 }
 
 .static-bar-icon {
-    height: 1rem; /* Adjust icon size */
+    height: 2rem; /* Adjust icon size */
     width: auto;
     cursor: pointer;
 }
