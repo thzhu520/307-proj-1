@@ -83,7 +83,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2B7D9; /* Adjust the color as needed */
+    background-color: #B2B7D9; 
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -93,7 +93,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
 }
 
@@ -159,7 +159,7 @@ body {
 /* Decorative Elements for Title */
 .issue-title::before,
 .issue-title::after {
-    font-family: "Playpen Sans", sans-serif; /* Match the title font */
+    font-family: "Playpen Sans", sans-serif; 
     font-size: 2.5rem; /* Slightly smaller than the title font */
     color: #B2B7D9; /* Adjust decorative color */
 }

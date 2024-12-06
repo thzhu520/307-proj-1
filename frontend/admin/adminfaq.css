@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Playpen Sans', sans-serif;
-    background-color: #B3D6EB; /* Tan/Beige background color */
+    background-color: #B3D6EB; 
     color: #333; /* Standard dark text color */
     font-weight: bold;
     overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
@@ -14,7 +14,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2B7D9; /* Same as in all pages */
+    background-color: #B2B7D9; 
     padding: 10px 20px; /* Adjust padding for consistency */
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
     margin-left: -1.25rem;
 }
@@ -78,7 +78,7 @@ body {
 
 /* FAQ Title Styling */
 .faq-title {
-    font-family: 'Playpen Sans', sans-serif; /* Matches the playful font style */
+    font-family: 'Playpen Sans', sans-serif; 
     font-size: 3rem; /* Bold and larger font for emphasis */
     font-weight: bold;
     color: #ffffff; /* Black color for text */
@@ -88,7 +88,7 @@ body {
     margin-top: 60px; /* Add spacing from the top */
 }
 
-/* Decorative Elements for Title */
+/* Decorative elements */
 .faq-title::before,
 .faq-title::after {
     content: ' ˖ ݁𖥔 ݁˖'; /* Decorative stars */

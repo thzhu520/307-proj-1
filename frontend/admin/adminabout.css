@@ -14,7 +14,7 @@
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
     margin-left: -1.25rem;
 }
@@ -47,7 +47,7 @@
 
 /* Main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -107,11 +107,11 @@ body {
     text-align: center;
 }
 
-/* Original Static Larger Stars */
+/* decorative elements */
 .team-title::before {
-    content: '˚₊‧꒰ა '; /* Left large star */
+    content: '˚₊‧꒰ა '; 
     position: static;
-    font-size: 5rem; /* Larger star size */
+    font-size: 5rem; 
     color: #B2B7D9; 
     left: px; /* Position relative to title */
     top: 2.5%;
@@ -119,9 +119,9 @@ body {
 }
 
 .team-title::after {
-    content: ' ໒꒱ ‧₊˚'; /* Right large star */
+    content: ' ໒꒱ ‧₊˚'; 
     position: static;
-    font-size: 5rem; /* Larger star size */
+    font-size: 5rem; 
     color: #B2B7D9; 
     right: px; /* Position relative to title */
     top: 2.5%;
