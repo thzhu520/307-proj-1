@@ -7,7 +7,6 @@ UI protoype: https://www.figma.com/design/QD5ybAL8HWadLIpu6pLQOr/SLOutions?node-
 
 UML diagram: https://www.figma.com/board/14tvwcJOOrOt6pkTvUo0C5/TA-3%3A-Class-diagram---SLOutions?node-id=0-1&t=EIloMnTZh1VAJ52D-1
 
-## Contributing
 ### Coding Standards:
     1. Utilizing the Prettier Code Formatter on VS Code
     2. Camel case for functions and variables
