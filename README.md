@@ -1,5 +1,4 @@
 # SLOutions
-## 307-proj-1
 
 # How to use SLOutions
 To report issues on SLOutions open this link: https://proud-river-0020a851e.5.azurestaticapps.net , and it will bring you to the main page. There are two buttons, an Admin button for administrators to view all the submitted issues and an Anonymous button for regular students, staff, faculty or anyone on campus to submit an issue for something that they have noticed. When submitting an issue it will prompt for a title, location, and issue description with the addition that you can upload an image in your report. Included on the side is an interactive map for those who dont know the building name or number. Once you have submitted an issue you will be given an incident ID which you can use on the existing issues page to check the status of your issue and whether it has been resolved or is still in progress or unresolved. In the FAQ section, you will be able to see some commonly asked questions and it may answer a question if you have one. To learn more about the developers who made this application check out the about us!
