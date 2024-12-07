@@ -2,13 +2,13 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2B7D9; /* Same as in all pages */
-    padding: 10px 20px; /* Adjust padding for consistency */
+    background-color: #B2B7D9; 
+    padding: 10px 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+    box-sizing: border-box; 
 }
 
 
@@ -30,16 +30,15 @@
 
 /* Individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
-/* Hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
 }
@@ -55,11 +54,11 @@
 /* Static bar icon styling */
 .static-bar {
     position: center;
-    right: 6rem; /* Adjust for spacing from right */
+    right: 6rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem; 
     width: auto;
     cursor: pointer;
 }
@@ -74,7 +73,7 @@ body {
     max-height: 100%;
     font-family: 'Playpen Sans', sans-serif;
     background-color: #B3D6EB; 
-    color: #333; /* Standard dark text color */
+    color: #333; 
     font-weight: bold;
     overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
     display: flex;
@@ -100,8 +99,8 @@ body {
 .team-title {
     font-weight: bolder;
     font-size: 5rem;
-    margin-top: 100px; /* Increase this to move it further down */
-    margin-bottom: 30px; /* Add more space below */
+    margin-top: 100px; 
+    margin-bottom: 30px; 
     color: #ffffff;
     position: relative;
     text-align: center;
@@ -113,7 +112,7 @@ body {
     position: static;
     font-size: 5rem; 
     color: #B2B7D9; 
-    left: px; /* Position relative to title */
+    left: px; 
     top: 2.5%;
     transform: translateY(-50%);
 }
@@ -123,7 +122,7 @@ body {
     position: static;
     font-size: 5rem; 
     color: #B2B7D9; 
-    right: px; /* Position relative to title */
+    right: px; 
     top: 2.5%;
     transform: translateY(-50%);
 }

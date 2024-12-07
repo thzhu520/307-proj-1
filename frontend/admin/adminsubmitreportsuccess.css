@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Playpen Sans", sans-serif; /* Ensure font consistency */
+    font-family: "Playpen Sans", sans-serif; 
     overflow: hidden; /* Prevent scrolling caused by animations */
     position: relative; /* Allow absolutely positioned elements */
 }
@@ -30,11 +30,11 @@ body {
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 2.39rem; /* Adjust for spacing from right */
+    right: 2.39rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem;
     width: auto;
     cursor: pointer;
 }
@@ -93,9 +93,9 @@ body {
     cursor: pointer;
     max-width: 400px; /* Set a maximum width */
     width: auto; /* Automatically adjust to the content */
-    text-align: center; /* Ensure text is centered */
+    text-align: center; 
     margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Ensures proper alignment */
+    display: block; 
 }
 
 .submit-button:hover {

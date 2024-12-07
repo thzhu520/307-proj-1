@@ -66,7 +66,7 @@ body {
     position: absolute; /* Allow precise positioning */
     top: 50%; /* Vertically centers it */
     left: 50%; /* Horizontally centers it */
-    transform: translate(-50%, -50%); /* Adjusts for the element's own dimensions */
+    transform: translate(-50%, -50%); 
 }
 
 /* Login Container */
@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 25px; /* Space between elements */
-    width: 400px; /* Adjust width as needed */
+    width: 400px; 
 }
 
 /* Labels for Username and Password */
@@ -113,25 +113,25 @@ body {
 .login-input {
     width: 400px; /* Wider input fields */
     padding: 15px; /* Increase padding for larger appearance */
-    font-size: 18px; /* Adjust font size for readability */
+    font-size: 18px; 
     border: 2px solid #B2B7D9; /* Border color */
     border-radius: 8px; /* Rounded corners */
     font-family: "Playfair Display", serif;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    box-sizing: border-box; 
 }
 
 /* Input Focus Effect */
 .login-input:focus {
-    outline: none; /* Removes default outline */
-    border-color: #708DAD; /* Highlight color */
-    box-shadow: 0 0 5px #708DAD; /* shadow effect */
+    outline: none; 
+    border-color: #708DAD; 
+    box-shadow: 0 0 5px #708DAD; 
 }
 
 /* Decorative Elements for Labels */
 .login-label::before,
 .login-label::after {
-    font-family: "Playfair Display", serif; /* Matches the label font */
-    font-size: 18px; /* Slightly smaller than the label */
+    font-family: "Playfair Display", serif; 
+    font-size: 18px; 
     color: #000; /* Decorative color */
 }
 

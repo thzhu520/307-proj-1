@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+    box-sizing: border-box;
 }
 
 /* General Styling */
@@ -51,7 +51,7 @@ body {
     padding: 1rem;
     position: relative; /* Relative for additional alignment */
     top: 5rem; /* Adjust to place directly under navbar */
-    z-index: 1; /* Ensure it displays above other elements */
+    z-index: 1; 
 }
 
 /* Decorative elements */
@@ -91,13 +91,13 @@ body {
 
 /* Individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem;
 }
 
 /* Hover effect for links */
@@ -108,7 +108,7 @@ body {
 
 /* Main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -116,7 +116,7 @@ body {
 /* Static bar icon styling */
 .static-bar {
     position: center;
-    right: 6rem; /* Adjust for spacing from right */
+    right: 6rem; 
 }
 
 .static-bar-icon {
@@ -131,9 +131,9 @@ body {
     align-items: center;
     justify-content: center;
     width: 80%;
-    margin-top: 5rem; /* Adjust spacing below title */
+    margin-top: 5rem; 
     padding: 1rem;
-    border: 2px solid #4C94BD; /* Border color */
+    border: 2px solid #4C94BD; 
     border-radius: 10px; /* Rounded corners */
     background-color: #d0d4f3; /* Matches body background */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
@@ -144,24 +144,24 @@ body {
     width: 90%;
     padding: 1rem;
     margin: 0.5rem 0; /* Space between cards */
-    border: 2px solid #B2B7D9; /* Matches navbar */
+    border: 2px solid #B2B7D9; 
     border-radius: 10px;
-    background-color: #FFF; /* White background for contrast */
+    background-color: #FFF; 
     font-family: 'Playpen Sans', sans-serif;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
-    text-align: left; /* Aligns text to the left */
+    text-align: left;
 }
 
 /* Text inside the issue cards */
 .issue-card p {
-    margin: 0.5rem 0; /* Adjust spacing between lines */
+    margin: 0.5rem 0; 
     font-size: 1rem;
-    color: #333; /* Neutral text color */
+    color: #333; 
 }
 
 .issue-card strong {
     font-size: 1.1rem;
-    color: #000; /* Highlight for labels */
+    color: #000; 
 }
 
 /* Content container styling */
@@ -180,14 +180,14 @@ body {
 
 /* Individual issue cards styling */
 .issue-card {
-    width: 90%; /* Adjust to make each card smaller and centered */
+    width: 90%; 
     max-width: 1000px; /* Limit the card width */
     padding: 1.5rem;
     margin: 1rem auto; /* Center the card horizontally */
-    border: 2px solid #B2B7D9; /* Matches navbar */
+    border: 2px solid #B2B7D9; 
     border-radius: 15px;
-    background-color: #FFF; /* White background for contrast */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a more prominent shadow */
+    background-color: #FFF; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
     font-family: 'Playpen Sans', sans-serif;
     text-align: left; /* Align text to the left */
 }
@@ -252,8 +252,8 @@ body {
     background-color: #dde0f4;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 5rem; /* Ensure it's below the title */
-    z-index: 10; /* Ensure it's on top of other content */
+    margin-top: 5rem; 
+    z-index: 10; 
     position: relative;
 }
 
@@ -264,7 +264,7 @@ body {
     font-size: 1rem;
     border: 1px solid #B2B7D9;
     border-radius: 5px;
-    width: 100%; /* Make sure the inputs are fully expanded */
+    width: 100%; 
 }
 
 /* Filter Button */

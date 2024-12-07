@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Removes any default margin */
+    margin: 0;
     
 }
 
@@ -21,7 +21,6 @@ body {
     font-family: "Playfair Display";
     font-weight: bold;
     font-size: 30px;
-    /* font-size: calc(2vw + 10px);  */
     font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
@@ -64,7 +63,7 @@ body {
 
 /* Add underline on hover */
 .btn2:hover, .btn3:hover {
-    text-decoration: underline; /* Adds underline on hover */
+    text-decoration: underline; 
 }
 
 .button-container {
@@ -72,8 +71,8 @@ body {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     gap: 20px; /* Add spacing between buttons */
-    margin-top: 20px; /* Adjust spacing from the previous section */
-    width: 100%; /* Ensure the container spans full width */
+    margin-top: 20px; 
+    width: 100%; 
 }
 
 
@@ -110,13 +109,13 @@ body {
 
 /* Individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
 /* Hover effect for links */
@@ -127,7 +126,7 @@ body {
 
 /* Main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -135,11 +134,11 @@ body {
 /* Static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 2.39rem; /* Adjust for spacing from right */
+    right: 2.39rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem; 
     width: auto;
     cursor: pointer;
 }
@@ -147,12 +146,12 @@ body {
 /* Issue Section Title Styling */
 .issue-title {
     font-family: "Playpen Sans", sans-serif;
-    font-size: 3rem; /* Adjust size if needed */
+    font-size: 3rem; 
     font-weight: bold;
     color: #FFF;
-    margin-top: 9rem; /* Increase this value to move it down */
-    margin-bottom: -18rem; /* Space between title and description box */
-    position: center; /* No need for transform here */
+    margin-top: 9rem; 
+    margin-bottom: -18rem; 
+    position: center; 
     margin-left: 7rem;
 }
 
@@ -161,7 +160,7 @@ body {
 .issue-title::after {
     font-family: "Playpen Sans", sans-serif; 
     font-size: 2.5rem; /* Slightly smaller than the title font */
-    color: #B2B7D9; /* Adjust decorative color */
+    color: #B2B7D9; 
 }
 
 .issue-title::before {
@@ -187,13 +186,13 @@ body {
 
 
 .description-box {
-    width: 35rem; /* Use vw to make it responsive to the screen width */
-    height: 15rem; /* Use vh to make it responsive to the screen height */
+    width: 35rem; 
+    height: 15rem; 
     background-color: #D5E0F5;
     font-family: "Playpen Sans";
     font-style: normal;
     flex-shrink: 0;
-    font-size: 1.5rem; /* Adjust font size */
+    font-size: 1.5rem; 
     line-height: 1.8; /* Better readability */
     font-weight: 700;
     color: #000;
@@ -202,7 +201,7 @@ body {
     margin-right: 5rem; /* Space from the map */
     margin-left: 5rem;
     margin-bottom: -2rem; /* Adjust bottom spacing if necessary */
-    border-radius: 1rem; /* Rounded corners for aesthetics */
+    border-radius: 1rem; 
     padding: 9px;
 }
 
@@ -212,7 +211,7 @@ body {
     width: 30rem;
     height: 40rem;
     border: 2px solid #000; /* Black border */
-    border-radius: 4px; /* Optional: rounded corners */
+    border-radius: 4px; 
     transform: translateY(10rem);
     margin-right: 5rem;
 }
