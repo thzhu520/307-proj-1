@@ -153,7 +153,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2B7D9; /* Adjust the color as needed */
+    background-color: #B2B7D9; 
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -163,7 +163,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
 }
 

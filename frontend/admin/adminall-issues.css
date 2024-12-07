@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2B7D9; /* Same as in all pages */
+    background-color: #B2B7D9; 
     padding: 10px 20px; /* Adjust padding for consistency */
     display: flex;
     justify-content: space-between;
@@ -47,14 +47,14 @@ body {
     font-family: 'Playpen Sans', sans-serif;
     color: #FFF;
     text-align: center;
-    margin: 0; /* Reset default margins */
+    margin: 0; 
     padding: 1rem;
     position: relative; /* Relative for additional alignment */
     top: 5rem; /* Adjust to place directly under navbar */
     z-index: 1; /* Ensure it displays above other elements */
 }
 
-/* Decorative effects for title */
+/* Decorative elements */
 .form-title::before,
 .form-title::after {
     font-family: "Playpen Sans", sans-serif;
@@ -75,7 +75,7 @@ body {
 
 /* Logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
     margin-left: -1.25rem;
 }
