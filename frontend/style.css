@@ -45,51 +45,7 @@ body {
     cursor: pointer;
     margin-bottom: 1rem; /* Space between buttons */
 }
-/* .btn-anon {
-    display: flex;
-    width: auto;
-    height: auto;
-    padding: 2rem;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
 
-    border-radius: 20px;
-    background: #7BB4D4;
-    color: #000; 
-    font-family: "Playfair Display", serif; 
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-admin {
-    display: flex;
-    width: auto;
-    height: auto; 
-    padding: 40px 120px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #7BB4D4; 
-    color: #000; 
-    font-family: "Playfair Display", serif; 
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-
-    border: none;
-    cursor: pointer;
-
-    margin-top: 1000px;           
-} */
 
 .icon {
     width: 25rem; /* Consistent size */
@@ -102,7 +58,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 3rem; /* Maintain consistent size */
+    width: 3rem; 
 }
 
 
@@ -114,31 +70,12 @@ body {
     transform: translateY(-25px); /* Move the buttons up by reducing this value */
 }
 
-
-
 .anon-container,
 .btn-admin {
     position: relative;
     z-index: 1; /* Ensures buttons are above the airplane image */
     margin: 3px 0; /* Adds vertical space between buttons */
 }
-
-/* .btn-anon,
-.btn-admin {
-    background-color: #7BB4D4;
-    color: #000;
-    width: 476px;
-    height: 129px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    font-family: "Playfair Display", serif;
-    font-size: 40px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-} */
 
 .subtext-anon {
     font-family: "Playpen Sans", sans-serif;
