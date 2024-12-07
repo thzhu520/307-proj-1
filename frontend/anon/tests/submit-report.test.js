@@ -3,10 +3,10 @@ const { setupFormListener } = require("../submit-report.js");
 global.fetch = jest.fn();
 
 beforeEach(() => {
-    // Clear any previous mocks
+    // clear previous mocks
     fetch.mockClear();
 
-    // Mock the DOM
+    // mock the DOM
     document.body.innerHTML = `
         <form id="reportForm">
             <input id="title" value="Broken Window" />
@@ -15,11 +15,11 @@ beforeEach(() => {
         </form>
     `;
 
-    // Mock window.location
+    // mock window.location like how we do in the html file
     delete window.location;
     window.location = { href: "" };
 
-    // Call the function to attach the event listener
+
     setupFormListener();
 });
 
@@ -33,21 +33,21 @@ test("calls the API with the correct data", async () => {
     const form = document.getElementById("reportForm");
     form.dispatchEvent(new Event("submit"));
 
-    await new Promise(process.nextTick); // Wait for async code to finish
+    await new Promise(process.nextTick); 
 
-    // Parse the body of the actual fetch call
+
     const fetchCallBody = JSON.parse(fetch.mock.calls[0][1].body);
 
-    // Assert individual fields
+    // assert everything
     expect(fetchCallBody.title).toBe("Broken Window");
     expect(fetchCallBody.description).toBe("Glass shattered");
     expect(fetchCallBody.location).toBe("Building A, Room 101");
     expect(fetchCallBody.status).toBe("unresolved");
 
-    // Validate `createdDate` is valid 
+    // createdDate is valid 
     expect(new Date(fetchCallBody.createdDate).toISOString()).toBe(fetchCallBody.createdDate);
 
-    // Verify fetch was called with correct URL and method
+    // verify fetch was called with correct URL and method
     expect(fetch).toHaveBeenCalledWith(
         "https://sloutions-cugpega6c5efaba4.westus3-01.azurewebsites.net/api/reports",
         expect.objectContaining({

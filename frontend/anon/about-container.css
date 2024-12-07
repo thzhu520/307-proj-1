@@ -2,69 +2,69 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Same as in all pages */
-    padding: 10px 20px; /* Adjust padding for consistency */
+    background-color: #B2CBD9; /* same as in all pages */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+    box-sizing: border-box; /* makes sure padding doesn’t affect width/height */
 }
 
 
-/* Logo in the navbar */
+/* logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
     margin-left: -1.25rem;
 }
 
-/* Navigation links container with flex for center alignment */
+/* navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;
-    flex-grow: 1; /* Allows it to take the remaining space */
-    justify-content: center; /* Centers the links */
-    gap: 50px; /* Spacing between links */
+    flex-grow: 1; /* allows it to take the remaining space */
+    justify-content: center; 
+    gap: 50px; /* spacing between links */
     margin-left: -50px;
 }
 
-/* Individual navigation links */
+/* the navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000;
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
-/* Hover effect for links */
+/* hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
 }
 
 
-/* Main content styling (to account for navbar height) */
+/* main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Static bar icon styling */
+/* static bar icon styling */
 .static-bar {
     position: center;
-    right: 6rem; /* Adjust for spacing from right */
+    right: 6rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem; 
     width: auto;
     cursor: pointer;
 }
 
-/* General Body Styling */
+/* Body Styling */
 body {
     margin: 0;
     padding: 0;
@@ -73,35 +73,34 @@ body {
     max-width: 100%; /* Avoids any overflow */
     max-height: 100%;
     font-family: 'Playpen Sans', sans-serif;
-    background-color: #D9C0B2; /* Tan/Beige background color */
-    color: #333; /* Standard dark text color */
+    background-color: #D9C0B2; 
+    color: #333; 
     font-weight: bold;
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    overflow-x: hidden; 
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Start from the top */
-    align-items: center; /* Center the content horizontally */
-    background-color: #D9C0B2; /* Consistent background color */
+    flex-direction: column; /* stack elements vertically */
+    justify-content: flex-start; /* start from the top */
+    align-items: center; /* enter the content horizontally */
+    background-color: #D9C0B2;
 
 }
 
 
 
-/* Team Section */
 .team-section {
     text-align: center;
     background-color: #D9C0B2;
     position: relative;
-    overflow: hidden; /* Prevent extra elements from scrolling */
+    overflow: hidden; /* prevents extra elements from scrolling */
 }
 
 
-/* Title with Static Clouds */
+/* title with Static Clouds */
 .team-title {
     font-weight: bolder;
     font-size: 5rem;
-    margin-top: 100px; /* Increase this to move it further down */
-    margin-bottom: 30px; /* Add more space below */
+    margin-top: 100px; /* increase this to move it further down */
+    margin-bottom: 30px;
     color: #ffffff;
     position: relative;
     text-align: center;
@@ -109,26 +108,26 @@ body {
 
 /* Original Static Larger Stars */
 .team-title::before {
-    content: '˚₊‧꒰ა '; /* Left large star */
+    content: '˚₊‧꒰ა ';
     position: static;
-    font-size: 5rem; /* Larger star size */
+    font-size: 5rem;
     color: #D9E4EC; 
-    left: px; /* Position relative to title */
+    left: px; 
     top: 2.5%;
     transform: translateY(-50%);
 }
 
 .team-title::after {
-    content: ' ໒꒱ ‧₊˚'; /* Right large star */
+    content: ' ໒꒱ ‧₊˚'; 
     position: static;
-    font-size: 5rem; /* Larger star size */
+    font-size: 5rem; 
     color: #D9E4EC; 
-    right: px; /* Position relative to title */
+    right: px; 
     top: 2.5%;
     transform: translateY(-50%);
 }
 
-/* Moving Clouds */
+/* moving clouds */
 .cloud {
     position: absolute;
     font-size: 5rem;
@@ -138,17 +137,17 @@ body {
  
 }
 
-/* Moving Stars */
+/* moving stars */
 .star {
     position: absolute;
     font-size: 2rem;
     color: #D9E4EC;
     opacity: 0.7;
-    animation: move-diagonal 11s linear infinite; /* Diagonal animation */
+    animation: move-diagonal 11s linear infinite; /* diagonal animation */
 
 }
 
-/* Randomize Initial Positions */
+/* randomize initial positions */
 .cloud:nth-child(1), .star:nth-child(1) {
     top: 10%;
     left: -20%;
@@ -175,7 +174,7 @@ body {
     animation-delay: 8s;
 }
 
-/* Unified Diagonal Animation */
+/* unified diagonal animation */
 @keyframes move-diagonal {
     0% {
         opacity: 1;
@@ -185,20 +184,20 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
+        transform: translate(100vw, 100vh) scale(1.2); /* move diagonally */
         opacity: 1;
     }
 }
 
-/* Team Grid */
+/* team grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr); /* two columns */
     gap: 30px;
     padding: 20px;
 }
 
-/* Team Member */
+/* team members */
 .team-member {
     display: flex;
     flex-direction: column;

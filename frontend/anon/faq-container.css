@@ -1,9 +1,9 @@
-/* Navbar styling */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
+    background-color: #B2CBD9;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -12,77 +12,77 @@
 }
 
 
-/* Logo in the navbar */
+/* logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
     margin-left: -1.21rem;
 }
 
-/* Navigation links container with flex for center alignment */
+/* navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;
-    flex-grow: 1; /* Allows it to take the remaining space */
-    justify-content: center; /* Centers the links */
-    gap: 50px; /* Spacing between links */
+    flex-grow: 1; /* allows it to take the remaining space */
+    justify-content: center; /* centers the links */
+    gap: 50px; /* spacing between links */
     margin-left: -30px;
 }
 
-/* Individual navigation links */
+/* individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
-/* Hover effect for links */
+/* hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
 }
 
-/* Static bar icon styling */
+/* static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 4rem; /* Adjust for spacing from right */
+    right: 4rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem; 
     width: auto;
     cursor: pointer;
 }
 
-/* General Body Styling */
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Playpen Sans', sans-serif;
-    background-color: #D9C0B2; /* Tan/Beige background color */
-    color: #333; /* Standard dark text color */
+    background-color: #D9C0B2; 
+    color: #333;
     font-weight: bold;
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    overflow-x: hidden; 
 }
 
 /* FAQ Title Styling */
 .faq-title {
-    font-family: 'Playpen Sans', sans-serif; /* Matches the playful font style */
-    font-size: 3rem; /* Bold and larger font for emphasis */
+    font-family: 'Playpen Sans', sans-serif; 
+    font-size: 3rem;
     font-weight: bold;
-    color: #ffffff; /* Black color for text */
+    color: #ffffff; 
     margin-bottom: 0px;
-    text-align: center; /* Center aligns the title */
-    position: relative; /* For decorative elements */
-    margin-top: 60px; /* Add spacing from the top */
+    text-align: center;
+    position: relative;
+    margin-top: 60px; 
 }
 
-/* Decorative Elements for Title */
+/* decorative elements for title */
 .faq-title::before,
 .faq-title::after {
-    content: ' ˖ ݁𖥔 ݁˖'; /* Decorative stars */
+    content: ' ˖ ݁𖥔 ݁˖'; 
     font-size: 2.5rem;
     color: #D9E4EC;
     position: static;
@@ -90,7 +90,7 @@ body {
     transform: translateY(-50%);
 }
 .faq-title::before {
-    content: '˖ ݁𖥔 ݁˖ '; /* Decorative stars */
+    content: '˖ ݁𖥔 ݁˖ ';
     font-size: 2.5rem;
     color: #D9E4EC;
     position: static;
@@ -99,24 +99,24 @@ body {
 }
 
 
-/* FAQ Container */
+/* FAQ container */
 .faq-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 30px; /* Space between FAQ items */
+    flex-direction: column; 
+    gap: 30px;
     padding: 20px;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
 }
 
-/* Individual FAQ Items */
+/* individual FAQ items */
 .faq-item {
     background-color: #E5EDF3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    max-width: 800px; /* Set a max width for the FAQ items */
-    width: 100%; /* Ensure the items take full width up to the max width */
+    max-width: 800px; 
+    width: 100%; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -126,31 +126,31 @@ body {
 }
 
 
-/* FAQ Section */
+
 .faq-section {
     text-align: center;
-    background-color: #D9C0B2; /* Matches the rest of the design */
+    background-color: #D9C0B2; 
     padding: 50px 20px;
-    position: relative; /* Ensures proper stacking context for z-index */
-    overflow: hidden; /* Prevent extra elements from scrolling */
-    z-index: 0; /* Base layer for the FAQ section */
+    position: relative; /* ensures proper stacking context for z-index */
+    overflow: hidden; /* prevent extra elements from scrolling */
+    z-index: 0; 
 }
 
 /* FAQ Header (Question in Cloud) */
 .faq-header {
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: #B2CBD9; /* Cloud color */
-    color: #FFF; /* Text color */
+    background-color: #B2CBD9; 
+    color: #FFF; 
     padding: 10px 15px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: block; /* Ensures the element spans its own line */
-    text-align: center; /* Centers text within the header */
-    margin: 0 auto 20px; /* Centers the header horizontally and adds spacing below */
-    max-width: fit-content; /* Ensures the width fits content dynamically */
-    z-index: 1; /* Ensures the header is above decorations */
-    position: relative; /* Necessary for z-index to work */
+    display: block; /* ensures the element spans its own line */
+    text-align: center; /* centers text within the header */
+    margin: 0 auto 20px; /* centers the header horizontally and adds spacing below */
+    max-width: fit-content; /* ensures the width fits content dynamically */
+    z-index: 1; /* ensures the header is above decorations */
+    position: relative; /* necessary for z-index to work */
 }
 
 
@@ -171,14 +171,14 @@ body {
     margin-bottom: 5px;
 }
 
-/* Moving Decorations */
+/* moving decorations */
 .faq-decoration {
     position: absolute;
     font-size: 6rem;
     color: #D9E4EC;
-    opacity: 50; /* Subtle background effect */
-    animation: move-diagonal 20s linear infinite; /* Diagonal animation */
-    z-index: -1; /* Move decorations behind all other elements */
+    opacity: 50; 
+    animation: move-diagonal 20s linear infinite; 
+    z-index: -1;
 }
 
 .faq-decoration:nth-child(1) {
@@ -211,7 +211,7 @@ body {
     animation-delay: 0s;
 }
 
-/* Unified Diagonal Animation */
+/* unified diagonal animation */
 @keyframes move-diagonal {
     0% {
         opacity: 1;
@@ -221,7 +221,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translate(100vw, 100vh) scale(1.2); /* Move diagonally */
+        transform: translate(100vw, 100vh) scale(1.2); 
         opacity: 1;
     }
 }

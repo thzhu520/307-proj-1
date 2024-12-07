@@ -1,29 +1,28 @@
-/* General Body Styling */
 body {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
-    max-width: 100%; /* Avoids any overflow */
+    max-width: 100%; 
     max-height: 100%;
     font-family: 'Playpen Sans', sans-serif;
-    background-color: #D9C0B2; /* Tan/Beige background color */
-    color: #333; /* Standard dark text color */
+    background-color: #D9C0B2; 
+    color: #333; 
     font-weight: bold;
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+    overflow-x: hidden; 
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Start from the top */
-    align-items: center; /* Center the content horizontally */
+    flex-direction: column;
+    justify-content: flex-start; /* start from the top */
+    align-items: center;
 }
 
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
+    background-color: #B2CBD9; 
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -31,57 +30,57 @@ body {
     z-index: 1000;
 }
 
-/* Logo in the navbar */
+/* logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
 }
 
-/* Navigation links container with flex for center alignment */
+/* navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;
-    flex-grow: 1; /* Allows it to take the remaining space */
-    justify-content: center; /* Centers the links */
-    gap: 50px; /* Spacing between links */
+    flex-grow: 1; 
+    justify-content: center;
+    gap: 50px; 
     margin-left: -30px;
 }
 
-/* Individual navigation links */
+/* individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
-/* Hover effect for links */
+/* hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
 }
 
-/* Main content styling (to account for navbar height) */
+/* main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Static bar icon styling */
+/* static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 2.39rem; /* Adjust for spacing from right */
+    right: 2.39rem; /* adjust for spacing from right */
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem;
     width: auto;
     cursor: pointer;
 }
 
-/* Content Wrapper */
+
 .content-wrapper {
     max-width: 800px;
     margin: 120px auto 0;
@@ -89,7 +88,7 @@ body {
     text-align: center;
 }
 
-/* Header for Existing Issues */
+/* header for Existing Issues */
 .issues-header {
     font-size: 3rem;
     font-weight: bolder;
@@ -98,21 +97,21 @@ body {
     font-family: 'Playpen Sans';
 }
 
-/* Description Box */
+/* description Box */
 .description-box {
-    position: relative; /* Allow absolute positioning of the confetti canvas */
-    background-color: #D5E0F5; /* Light blue box */
+    position: relative; /* allow absolute positioning of the confetti canvas */
+    background-color: #D5E0F5; 
     padding: 30px;
     border-radius: 15px;
     color: #000;
     font-size: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-    overflow: hidden; /* Ensure confetti stays within the box */
+    overflow: hidden; /* ensure confetti stays within the box */
 }
 
 
-/* Form Section */
+/* form section */
 .form-container {
     display: flex;
     justify-content: center;
@@ -153,78 +152,78 @@ body {
     transform: scale(1.1);
 }
 
-/* Decorative Elements */
+/* decoration elements */
 .issues-header::before,
 .issues-header::after {
-    content: '⊹ ⁺ 𐔌𓆩 ᩧ ຼ ͡ ৯'; /* Decorative symbols for visual flair */
+    content: '⊹ ⁺ 𐔌𓆩 ᩧ ຼ ͡ ৯'; 
     position: static;
     font-size: 2.5rem;
     color: #D9E4EC;
 }
 
 .issues-header::after {
-    content: '໒⁀ ᩧຼ𓆪 ꒱ིྀ ⁺ ⊹'; /* Right decorative symbol */
+    content: '໒⁀ ᩧຼ𓆪 ꒱ིྀ ⁺ ⊹'; 
 }
 
 /* Icon Section */
 .icon-container {
     display: flex;
     justify-content: center;
-    gap: 50px; /* Increased spacing between icons */
+    gap: 50px;
     margin-top: 30px;
 }
 
 .icon-item {
     text-align: center;
-    font-size: 1.5rem; /* Larger text for labels */
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .icon {
-    font-size: 5rem; /* Increased size of the emojis */
-    color: #ccc; /* Default gray color */
+    font-size: 5rem; 
+    color: #ccc; 
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0.8; /* Slight transparency by default */
+    opacity: 0.8; 
 }
 
 .icon.active {
-    transform: scale(1.2); /* Slightly larger when active */
-    color: #000; /* Fully colored when active */
-    opacity: 1; /* Fully visible when active */
+    transform: scale(1.2); /* slightly larger when active */
+    color: #000; /* fully colored when active */
+    opacity: 1; /* fully visible when active */
 }
 
 .icon-item p {
     margin-top: 10px;
-    font-size: 1rem; /* Larger label size */
+    font-size: 1rem;
     color: #555;
 }
 
 .icon-item.active p {
-    color: #000; /* Darker color for active state */
+    color: #000; 
 }
 
 
-/* Background Stars Container */
+/* background stars container */
 .background-stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Keep stars behind the content */
+    z-index: -1; /* keep stars behind the content */
     overflow: hidden;
 }
 
-/* Individual Stars */
+/* individual stars */
 .background-stars .star {
     position: absolute;
-    font-size: 10rem; /* Default size */
-    color: #D9E4EC; /* Soft white-blue color */
-    opacity: 5; /* Start with higher opacity */
+    font-size: 10rem; 
+    color: #D9E4EC; 
+    opacity: 5; /* start with higher opacity */
     animation: diagonal-move-left 15s linear infinite;
 }
 
-/* Star Sizes */
+/* star sizes */
 .background-stars .star.small {
     font-size: 2rem;
     animation-duration: 8s;
@@ -240,7 +239,7 @@ body {
     animation-duration: 12s;
 }
 
-/* Random Initial Positions - Left Side */
+/* random initial positions - Left Side */
 .background-stars .star.left:nth-child(1) {
     top: 5%;
     left: -20%;
@@ -299,7 +298,7 @@ body {
     animation-name: diagonal-move-right;
 }
 
-/* Diagonal Movement Animation for Left Side */
+/* diagonal movement animation for Left Side */
 @keyframes diagonal-move-left {
     0% {
         transform: translate(0, 0);
@@ -315,7 +314,7 @@ body {
     }
 }
 
-/* Diagonal Movement Animation for Right Side */
+/* diagonal movement animation for Right Side */
 @keyframes diagonal-move-right {
     0% {
         transform: translate(0, 0);
@@ -334,22 +333,22 @@ body {
 
 /* CTA Button Styling */
 .cta {
-    text-align: center; /* Center align the button */
-    margin-top: 20px; /* Add spacing from the content above */
+    text-align: center; /* center align the button */
+    margin-top: 20px; /* add spacing from the content above */
 }
 
 .cta-button {
-    display: inline-block; /* Makes it behave like a button */
-    background-color: #D9E4EC; /* Button background color */
-    color: #000000; /* Text color */
-    font-size: 1.2rem; /* Adjust the font size */
-    padding: 10px 20px; /* Padding for the button */
-    text-decoration: none; /* Remove underline */
-    border-radius: 8px; /* Rounded corners */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    display: inline-block; /* makes it behave like a button */
+    background-color: #D9E4EC; 
+    color: #000000;
+    font-size: 1.2rem; 
+    padding: 10px 20px; 
+    text-decoration: none; /* remove underline */
+    border-radius: 8px; /* rounded corners */
+    transition: background-color 0.3s, transform 0.2s; 
 }
 
 .cta-button:hover {
-    background-color: #cae1f1; /* Darker color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #cae1f1; 
+    transform: scale(1.05); 
 }

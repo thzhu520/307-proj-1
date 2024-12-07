@@ -2,7 +2,7 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    max-width: 100%; /* Avoids any overflow */
+    max-width: 100%;
     max-height: 100%;
     flex-shrink: 0;
     background-color: #D9C0B2;
@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Removes any default margin */
+    margin: 0; 
     
 }
 
@@ -25,7 +25,7 @@ body {
     font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
+    width: 80%; /* fills most of the screen width */
     max-width: 476px; /* Maximum width for larger screens */
     height: auto;
     padding: 20px;
@@ -49,8 +49,8 @@ body {
     font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
-    width: 80%; /* Fills most of the screen width */
-    max-width: 476px; /* Maximum width for larger screens */
+    width: 80%; /* fills most of the screen width */
+    max-width: 476px; /* maximum width for larger screens */
     height: auto;
     padding: 20px;
     display: flex;
@@ -61,30 +61,30 @@ body {
     margin-left: 4.49rem;
     margin-bottom: 5rem;
     margin-top: -10rem;
-    text-decoration: none; /* Removes underline */
-    transition: text-decoration 0.3s ease; /* Smooth transition effect */
+    text-decoration: none; /* removes underline */
+    transition: text-decoration 0.3s ease;
 
 }
 
 /* Add underline on hover */
 .btn2:hover {
-    text-decoration: underline; /* Adds underline on hover */
+    text-decoration: underline;
 }
 
 .button-container {
     display: flex;
     justify-content: left;
-    width: 100%; /* Full width of the container */
-    margin-left: 50px; /* Adjust this value to move it left */
+    width: 100%; 
+    margin-left: 50px;
 }
 
 
-/* Navbar styling */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #B2CBD9; /* Adjust the color as needed */
+    background-color: #B2CBD9; 
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -92,128 +92,128 @@ body {
     z-index: 1000;
 }
 
-/* Logo in the navbar */
+/* logo in the navbar */
 .navbar-logo img {
-    height: 3rem; /* Adjust as needed */
+    height: 3rem; 
     width: auto;
 }
 
 
 
-/* Navigation links container with flex for center alignment */
+/* navigation links container with flex for center alignment */
 .navbar-links {
     display: flex;
-    flex-grow: 1; /* Allows it to take the remaining space */
-    justify-content: center; /* Centers the links */
-    gap: 50px; /* Spacing between links */
+    flex-grow: 1;
+    justify-content: center; 
+    gap: 50px; 
     margin-left: -30px;
 }
 
-/* Individual navigation links */
+/* individual navigation links */
 .navbar-links a {
-    color: #000; /* Text color */
+    color: #000; 
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-size: 1.5rem; /* Button font size */
+    font-size: 1.5rem; 
 }
 
-/* Hover effect for links */
+/* hover effect for links */
 .navbar-links a:hover {
     text-decoration: underline;
 }
 
 
-/* Main content styling (to account for navbar height) */
+/* main content styling (to account for navbar height) */
 .content {
-    padding-top: 0px; /* Adjust based on navbar height */
+    padding-top: 0px; 
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Static bar icon styling */
+/* static bar icon styling */
 .static-bar {
     position: absolute;
-    right: 2.39rem; /* Adjust for spacing from right */
+    right: 2.39rem; 
 }
 
 .static-bar-icon {
-    height: 2rem; /* Adjust icon size */
+    height: 2rem;
     width: auto;
     cursor: pointer;
 }
 
-/* Issue Section Title Styling */
+/* issue section title styling */
 .issue-title {
     font-family: "Playpen Sans", sans-serif;
-    font-size: 3rem; /* Adjust size if needed */
+    font-size: 3rem; 
     font-weight: bold;
     color: #FFF;
-    margin-top: 7rem; /* Increase this value to move it down */
-    margin-bottom: -8rem; /* Space between title and description box */
-    position: center; /* No need for transform here */
+    margin-top: 7rem;
+    margin-bottom: -8rem; 
+    position: center;
     margin-left: 8rem;
 }
 
-/* Decorative Elements for Title */
+/* decoration elements for title */
 .issue-title::before,
 .issue-title::after {
-    font-family: "Playpen Sans", sans-serif; /* Match the title font */
-    font-size: 2.5rem; /* Slightly smaller than the title font */
-    color: #D9E4EC; /* Adjust decorative color */
+    font-family: "Playpen Sans", sans-serif;
+    font-size: 2.5rem; 
+    color: #D9E4EC;
 }
 
 .issue-title::before {
-    content: 'ᐠ.ᝰ'; /* Decorative text before */
-    margin-right: 0.5rem; /* Space between decoration and title */
+    content: 'ᐠ.ᝰ';
+    margin-right: 0.5rem; 
 }
 
 .issue-title::after {
-    content: 'ᝰ.ᐟ'; /* Decorative text after */
-    margin-left: 0.5rem; /* Space between title and decoration */
+    content: 'ᝰ.ᐟ';
+    margin-left: 0.5rem;
 }
 
 
 
-/* Description Box and Map Container */
+/* description box and map container */
 .content-container {
     display: flex;
     align-items: flex-start;
-    gap: 20px; /* Space between the description box and the map */
-    margin-top: 20px; /* Pushes content down */
+    gap: 20px; /* space between the description box and the map */
+    margin-top: 20px;
 
 }
 
 
 .description-box {
-    width: 40vw; /* Use vw to make it responsive to the screen width */
-    height: 45vh; /* Use vh to make it responsive to the screen height */
-    padding: 2rem; /* Adjust padding for consistent spacing */
+    width: 40vw; /* use vw to make it responsive to the screen width */
+    height: 45vh; /* use vh to make it responsive to the screen height */
+    padding: 2rem; 
     background-color: #D5E0F5;
     font-family: "Playpen Sans";
     font-style: normal;
     flex-shrink: 0;
-    font-size: 1.5rem; /* Adjust font size */
-    line-height: 1.8; /* Better readability */
+    font-size: 1.5rem; 
+    line-height: 1.8; 
     font-weight: 700;
     color: #000;
     box-sizing: border-box;
-    margin-top: 7rem; /* Space from the top */
-    margin-right: 5rem; /* Space from the map */
+    margin-top: 7rem;
+    margin-right: 5rem; 
     margin-left: 5rem;
-    margin-bottom: -2rem; /* Adjust bottom spacing if necessary */
-    border-radius: 1rem; /* Rounded corners for aesthetics */
+    margin-bottom: -2rem;
+    border-radius: 1rem; 
 }
 
 
-/* Map Image Styling */
+/* map image styling */
 .map-image {
     width: 30rem;
     height: 40rem;
-    border: 2px solid #000; /* Black border */
-    border-radius: 4px; /* Optional: rounded corners */
+    border: 2px solid #000; 
+    border-radius: 4px;
     margin-top: 0rem;
     margin-right: 5rem;
 }
